@@ -1,10 +1,12 @@
-import React, {useEffect} from 'react';
-import Api from "./util/Api";
+import React, {useEffect, useState} from 'react';
+import RequestFactory from "./util/models/api/RequestFactory";
 
 function App() {
 
   useEffect(() => {
-    Api.get('/preflight.php').then(console.log);
+    RequestFactory.preflight('123').then((res) => {
+      console.log(res);
+    })
   }, []);
 
   return (
