@@ -5,6 +5,8 @@ import MarkDownToJsx from "./MarkDownToJsx";
 import LoadingSpinner from "../placeholder/loading/LoadingSpinner";
 import {useSelector} from "react-redux";
 import {settingsSelector} from "../../selectors/selectors";
+import ErrorType, {errorTypeByHttpStatusCode} from "../../util/errors/ErrorType";
+import Error from "../error/Error";
 
 interface IProps {
     slug: string
@@ -13,6 +15,7 @@ interface IProps {
 export default function MarkdownPage({slug}: IProps) {
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState<Page|null>(null);
+    const [error, setError] = useState<ErrorType|null>(null);
     const settings = useSelector(settingsSelector);
 
     useEffect(() => {
@@ -20,6 +23,8 @@ export default function MarkdownPage({slug}: IProps) {
             setLoading(false);
             if (res.status === 200) {
                 setPage(res.data.page);
+            } else {
+                setError(errorTypeByHttpStatusCode(res.status));
             }
         });
     }, [slug]);
@@ -38,7 +43,7 @@ export default function MarkdownPage({slug}: IProps) {
             delayMs={500}
         />
         { page == null
-            ? '404'
+            ? (error == null ? '' : <Error errorType={error}/>)
             : <MarkDownToJsx md={page?.markdown?.content || ''}/>
         }
     </section>);
