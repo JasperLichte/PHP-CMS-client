@@ -13,10 +13,12 @@ function App() {
 
   useEffect(() => {
     RequestFactory.preflight('123').then((res) => {
-      dispatch({
-        type: ActionType.SET_SETTINGS,
-        settings: res.data.settings
-      });
+      if (res.status === 200) {
+        dispatch({
+          type: ActionType.SET_SETTINGS,
+          settings: res.data.settings
+        });
+      }
     });
   }, [dispatch]);
 
