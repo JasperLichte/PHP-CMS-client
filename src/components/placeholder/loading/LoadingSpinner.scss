@@ -1,0 +1,27 @@
+.loading {
+  transition: opacity 2s ease;
+  &[data-active=yes] {
+    opacity: 1;
+  }
+  &[data-active=no] {
+    opacity: 0;
+  }
+
+  &-fs {
+    background-color: var(--body-bg-color);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &[data-active=no] {
+      left: 100vw;
+      transition: opacity 2s ease, left 0s linear 2s;
+    }
+  }
+
+}

@@ -30,7 +30,7 @@ function App() {
 
   return (<>
     {loading
-      ? 'Loading...'
+      ? ''
       : <>
           {settings != null && <SettingsApplyer settings={settings} />}
           <MarkdownPage slug="start"/>
