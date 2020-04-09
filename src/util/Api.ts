@@ -1,4 +1,4 @@
-import ApiResponse from "./models/api/ApiResponse";
+import ApiResponse from "./api/ApiResponse";
 
 const base_url = 'http://localhost:8073/Projects/PHP-CMS/api'; // TODO move in config file
 
