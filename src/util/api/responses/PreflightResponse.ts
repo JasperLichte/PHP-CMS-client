@@ -7,6 +7,10 @@ class PreflightResponse implements ResponseData{
     public user = null;
 
     deserialize(input: {}): PreflightResponse {
+        if (!input) {
+            return this;
+        }
+
         // @ts-ignore
         input['settings'] && (this.settings = input['settings'].map(s => (new Setting()).deserialize(s)));
         // @ts-ignore
