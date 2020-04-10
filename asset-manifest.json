@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/jaspress-client/static/css/main.7dcc525d.chunk.css",
+    "main.js": "/jaspress-client/static/js/main.08d261ea.chunk.js",
+    "main.js.map": "/jaspress-client/static/js/main.08d261ea.chunk.js.map",
+    "runtime-main.js": "/jaspress-client/static/js/runtime-main.24af1705.js",
+    "runtime-main.js.map": "/jaspress-client/static/js/runtime-main.24af1705.js.map",
+    "static/js/2.89657cbc.chunk.js": "/jaspress-client/static/js/2.89657cbc.chunk.js",
+    "static/js/2.89657cbc.chunk.js.map": "/jaspress-client/static/js/2.89657cbc.chunk.js.map",
+    "index.html": "/jaspress-client/index.html",
+    "precache-manifest.fa7a40654db15d9e0e1f489ae786bb8a.js": "/jaspress-client/precache-manifest.fa7a40654db15d9e0e1f489ae786bb8a.js",
+    "service-worker.js": "/jaspress-client/service-worker.js",
+    "static/css/main.7dcc525d.chunk.css.map": "/jaspress-client/static/css/main.7dcc525d.chunk.css.map",
+    "static/js/2.89657cbc.chunk.js.LICENSE.txt": "/jaspress-client/static/js/2.89657cbc.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.24af1705.js",
+    "static/js/2.89657cbc.chunk.js",
+    "static/css/main.7dcc525d.chunk.css",
+    "static/js/main.08d261ea.chunk.js"
+  ]
+}
