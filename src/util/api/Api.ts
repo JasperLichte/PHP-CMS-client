@@ -1,13 +1,14 @@
-import ApiResponse from "./api/ApiResponse";
-import RequestFactory from "./api/RequestFactory";
-
-const base_url = 'http://localhost:8073/Projects/PHP-CMS/api'; // TODO move in config file
+import ApiResponse from "./ApiResponse";
+import RequestFactory from "./RequestFactory";
+import config from "../../config";
 
 class Api {
 
+    public static baseUrl = (config.PRODUCTION ? config.BASE_PROD_API_URL : config.BASE_DEV_API_URL);
+
     private static get(path: string, license: string): Promise<ApiResponse<any>> {
         return new Promise(async (resolve, reject) => {
-            const url = new URL(`${base_url}${path}`);
+            const url = new URL(`${Api.baseUrl}${path}`);
             url.searchParams.delete('license');
             url.searchParams.append('license', license);
 
@@ -21,7 +22,7 @@ class Api {
         return (body: {}) => {
             return new Promise(async (resolve, reject) => {
                 const json = (await fetch(
-                    `${base_url}${path}`,
+                    `${Api.baseUrl}${path}`,
                     {
                         method: 'POST',
                         body: JSON.stringify({...body, license}),

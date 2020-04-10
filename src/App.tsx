@@ -9,6 +9,8 @@ import ApiResponse from "./util/api/ApiResponse";
 import PreflightResponse from "./util/api/responses/PreflightResponse";
 import ErrorType, {errorTypeByHttpStatusCode} from "./util/errors/ErrorType";
 import Error from "./components/error/Error";
+import config from "./config";
+import Api from "./util/api/Api";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -17,7 +19,17 @@ export default function App() {
   const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
-    RequestFactory.preflight('123').then(handlePreflightResponse(dispatch));
+    RequestFactory.getConfig().then(res => {
+      if (res.status !== 200) {
+        dispatch({
+          type: ActionType.SET_ERROR,
+          error: errorTypeByHttpStatusCode(res.status)
+        });
+      } else {
+        Api.baseUrl = res.data.baseApiUrl;
+        RequestFactory.preflight(config.LICENSE).then(handlePreflightResponse(dispatch));
+      }
+    }).catch(console.log);
   }, [dispatch]);
 
   useEffect(() => {
