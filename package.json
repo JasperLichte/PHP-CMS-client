@@ -1,7 +1,8 @@
 {
   "name": "php-cms-client",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "http://JasperLichte.github.io/jaspress-client",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -11,6 +12,7 @@
     "@types/react": "^16.9.32",
     "@types/react-dom": "^16.9.6",
     "@types/react-redux": "^7.1.7",
+    "gh-pages": "^2.2.0",
     "markdown-to-jsx": "^6.11.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
@@ -25,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
