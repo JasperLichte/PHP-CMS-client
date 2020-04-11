@@ -10,15 +10,25 @@ import PreflightResponse from "./util/api/responses/PreflightResponse";
 import ErrorType, {errorTypeByHttpStatusCode} from "./util/errors/ErrorType";
 import Error from "./components/error/Error";
 import Api from "./util/api/Api";
-import license from "./license";
 
-export default function App() {
+interface IProps {
+  license: string,
+}
+
+export default function App({license}: IProps) {
   const dispatch = useDispatch();
   const settings = useSelector(settingsSelector);
   const error = useSelector(errorSelector);
   const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
+    if (!license) {
+      dispatch({
+        type: ActionType.SET_ERROR,
+        error: ErrorType.INVALID_LICENSE,
+      });
+      return;
+    }
     RequestFactory.getConfig().then(res => {
       if (res.status !== 200) {
         dispatch({
@@ -29,8 +39,8 @@ export default function App() {
         Api.baseUrl = res.data.baseApiUrl;
         RequestFactory.preflight(license).then(handlePreflightResponse(dispatch));
       }
-    }).catch(console.log);
-  }, [dispatch]);
+    });
+  }, [dispatch, license]);
 
   useEffect(() => {
     if (settings != null) {

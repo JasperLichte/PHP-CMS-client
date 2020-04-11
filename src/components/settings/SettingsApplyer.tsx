@@ -6,7 +6,14 @@ interface IProps {
 }
 
 export default function SettingsApplyer({settings}: IProps) {
-    const css = `html {${settings.filter(s => s.cssProperty != null).map(s => `${s.cssProperty}: ${s.value};`).join('')}`;
+    const css = `html {
+        ${
+            settings
+            .filter(s => s.cssProperty != null)
+            .map(s => `${s.cssProperty}: ${s.value};`)
+            .join('')
+        }
+    }`;
 
     document.title = settings.find(s => s.key === 'APP_NAME')?.value || '';
 

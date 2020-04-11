@@ -4,13 +4,14 @@ import App from './App';
 import {Provider} from "react-redux";
 import rootReducer from "./reducers/reducer";
 import { createStore } from 'redux';
+import license from "./license";
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
   <React.StrictMode>
       <Provider store={store}>
-          <App />
+          <App license={license} />
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')
