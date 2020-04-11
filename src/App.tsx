@@ -9,8 +9,8 @@ import ApiResponse from "./util/api/ApiResponse";
 import PreflightResponse from "./util/api/responses/PreflightResponse";
 import ErrorType, {errorTypeByHttpStatusCode} from "./util/errors/ErrorType";
 import Error from "./components/error/Error";
-import config from "./config";
 import Api from "./util/api/Api";
+import license from "./license";
 
 export default function App() {
   const dispatch = useDispatch();
@@ -27,7 +27,7 @@ export default function App() {
         });
       } else {
         Api.baseUrl = res.data.baseApiUrl;
-        RequestFactory.preflight(config.LICENSE).then(handlePreflightResponse(dispatch));
+        RequestFactory.preflight(license).then(handlePreflightResponse(dispatch));
       }
     }).catch(console.log);
   }, [dispatch]);
