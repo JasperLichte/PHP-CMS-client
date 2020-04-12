@@ -13,7 +13,6 @@ class ApiResponse<T> implements Serializable {
     }
 
     deserialize(input: {}): ApiResponse<T> {
-
         // @ts-ignore
         this.status = parseInt(input['status']);
 
