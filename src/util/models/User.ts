@@ -14,7 +14,7 @@ export default class User implements Serializable {
         // @ts-ignore
         input['id'] && (this.id = parseInt(input['id']));
         // @ts-ignore
-        input['email'] && (this.id = `${input['email']}`);
+        input['email'] && (this.email = `${input['email']}`);
         // @ts-ignore
         input['isAdmin'] && (this.isAdmin = !!input['isAdmin']);
 
