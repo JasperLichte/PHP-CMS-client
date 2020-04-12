@@ -2,9 +2,10 @@ import Api from "./Api";
 import PreflightResponse from "./responses/PreflightResponse";
 import GetPageResponse from "./responses/GetPageResponse";
 import GetConfigResponse from "./responses/GetConfigResponse";
-import LoginResponse from "./responses/LoginResponse";
+import LoginResponse from "./responses/auth/LoginResponse";
 import NoDataResponse from "./responses/NoDataResponse";
-import RegisterResponse from "./responses/RegisterResponse";
+import RegisterResponse from "./responses/auth/RegisterResponse";
+import GetStatisticsResponse from "./responses/admin/GetStatisticsResponse";
 
 export default class RequestFactory {
 
@@ -52,6 +53,13 @@ export default class RequestFactory {
         return Api.makeGetRequest<NoDataResponse>(
             new NoDataResponse(),
             `/auth/logout.php`,
+        );
+    }
+
+    public static async getStatistics() {
+        return Api.makeGetRequest<GetStatisticsResponse>(
+            new GetStatisticsResponse(),
+            '/admin/statistics/get.php'
         );
     }
 

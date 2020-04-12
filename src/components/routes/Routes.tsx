@@ -4,12 +4,21 @@ import AuthRouter from "./AuthRouter";
 import HomePage from "../pages/home/HomePage";
 import Error from "../error/Error";
 import ErrorType from "../../util/errors/ErrorType";
+import AdminRouter from "./AdminRouter";
+import User from "../../util/models/User";
 
-export default function Routes() {
+export interface IRouterProps {
+    user: User|null,
+}
+
+export default function Routes(props: IRouterProps) {
     return (<Router>
         <Switch>
             <Route path="/auth">
-                <AuthRouter />
+                <AuthRouter {...props} />
+            </Route>
+            <Route path="/admin">
+                <AdminRouter {...props} />
             </Route>
             <Route exact path="/">
                 <HomePage />

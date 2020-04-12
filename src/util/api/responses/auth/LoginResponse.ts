@@ -1,5 +1,5 @@
-import ResponseData from "./ResponseData";
-import User from "../../models/User";
+import ResponseData from "../ResponseData";
+import User from "../../../models/User";
 
 class LoginResponse implements ResponseData {
 

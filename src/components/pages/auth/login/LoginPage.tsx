@@ -22,7 +22,11 @@ export default function LoginPage() {
         <LoginForm onSubmit={(email, password) => {
             UserServices.login(email, password).then(user => {
                 setUser(user);
-                history.push('/');
+                if (user?.isAdmin) {
+                    history.push('/admin');
+                } else {
+                    history.push('/');
+                }
             });
         }} />
         <Link to="/auth/register">Sign up instead</Link>

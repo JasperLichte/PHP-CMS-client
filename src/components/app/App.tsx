@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import RequestFactory from "../../util/api/RequestFactory";
 import {useDispatch, useSelector} from "react-redux";
 import ActionType from "../../actions/ActionType";
-import {errorSelector, settingsSelector} from "../../selectors/selectors";
+import {errorSelector, settingsSelector, userSelector} from "../../selectors/selectors";
 import SettingsApplyer from "../settings/SettingsApplyer";
 import ApiResponse from "../../util/api/ApiResponse";
 import PreflightResponse from "../../util/api/responses/PreflightResponse";
@@ -21,6 +21,7 @@ export default function App({license}: IProps) {
   const dispatch = useDispatch();
   const settings = useSelector(settingsSelector);
   const error = useSelector(errorSelector);
+  const user = useSelector(userSelector);
   const [ loading, setLoading ] = useState(true);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ export default function App({license}: IProps) {
   return (<>
     {settings != null && <SettingsApplyer settings={settings} />}
     <LoadingSpinner color="#f00" loading={loading} />
-    {!loading && <Routes/>}
+    {!loading && <Routes user={user} />}
   </>);
 }
 

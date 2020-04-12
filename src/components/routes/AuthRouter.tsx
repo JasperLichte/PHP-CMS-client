@@ -5,8 +5,9 @@ import Error from "../error/Error";
 import ErrorType from "../../util/errors/ErrorType";
 import LogoutPage from "../pages/auth/logout/LogoutPage";
 import RegisterPage from "../pages/auth/register/RegisterPage";
+import {IRouterProps} from "./Routes";
 
-const AuthRouter = () => {
+const AuthRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
 
     return (<Switch>
