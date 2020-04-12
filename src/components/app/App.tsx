@@ -68,6 +68,10 @@ function handlePreflightResponse(dispatch: Function) {
         type: ActionType.SET_SETTINGS,
         settings: res.data.settings
       });
+      dispatch({
+        type: ActionType.SET_USER,
+        user: res.data.user
+      });
     } else {
       dispatch({
         type: ActionType.SET_ERROR,
