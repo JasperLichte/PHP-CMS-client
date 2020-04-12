@@ -1,0 +1,2 @@
+.home-page nav{height:100vh;padding:1rem}.loading{transition:opacity 2s ease;position:absolute;z-index:999999}.loading[data-active=yes]{opacity:1}.loading[data-active=no]{opacity:0}.loading-fs{background-color:var(--body-bg-color);width:100vw;height:100vh;position:fixed;top:0;left:0;bottom:0;right:0;display:flex;justify-content:center;align-items:center}.loading-fs[data-active=no]{left:100vw;transition:opacity 2s ease,left 0s linear 2s}body{margin:0;padding:0}*,:after,:before{box-sizing:border-box}
+/*# sourceMappingURL=main.94135c63.chunk.css.map */
