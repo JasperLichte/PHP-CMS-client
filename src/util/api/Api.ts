@@ -6,13 +6,20 @@ class Api {
 
     public static baseUrl = (config.PRODUCTION ? config.BASE_PROD_API_URL : config.BASE_DEV_API_URL);
 
+    private static headers = () => ({
+
+    });
+
     private static get(path: string, license: string): Promise<ApiResponse<any>> {
         return new Promise(async resolve => {
             const url = new URL(`${Api.baseUrl}${path}`);
             url.searchParams.delete('license');
             url.searchParams.append('license', license);
 
-            const res = await fetch(url.href);
+            const res = await fetch(url.href, {
+                headers: Api.headers(),
+                credentials: 'include',
+            });
             const json = await res.json();
             resolve((new ApiResponse(json)).deserialize(json));
         });
@@ -26,6 +33,8 @@ class Api {
                     {
                         method: 'POST',
                         body: JSON.stringify({...body, license}),
+                        headers: Api.headers(),
+                        credentials: 'include',
                     }
                 )).json();
                 resolve((new ApiResponse(json)).deserialize(json));
