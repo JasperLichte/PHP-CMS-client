@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react';
-import RequestFactory from "./util/api/RequestFactory";
+import RequestFactory from "../../util/api/RequestFactory";
 import {useDispatch, useSelector} from "react-redux";
-import ActionType from "./actions/ActionType";
-import {errorSelector, settingsSelector} from "./selectors/selectors";
-import SettingsApplyer from "./components/settings/SettingsApplyer";
-import MarkdownPage from "./components/page/MarkdownPage";
-import ApiResponse from "./util/api/ApiResponse";
-import PreflightResponse from "./util/api/responses/PreflightResponse";
-import ErrorType, {errorTypeByHttpStatusCode} from "./util/errors/ErrorType";
-import Error from "./components/error/Error";
-import Api from "./util/api/Api";
+import ActionType from "../../actions/ActionType";
+import {errorSelector, settingsSelector} from "../../selectors/selectors";
+import SettingsApplyer from "../settings/SettingsApplyer";
+import ApiResponse from "../../util/api/ApiResponse";
+import PreflightResponse from "../../util/api/responses/PreflightResponse";
+import ErrorType, {errorTypeByHttpStatusCode} from "../../util/errors/ErrorType";
+import Error from "../error/Error";
+import Api from "../../util/api/Api";
+import Routes from "../routes/Routes";
+import './App.scss';
+import LoadingSpinner from "../placeholder/loading/LoadingSpinner";
 
 interface IProps {
   license: string,
@@ -52,13 +54,10 @@ export default function App({license}: IProps) {
     return <Error errorType={error} />;
   }
 
-  if (loading) {
-    return <></>;
-  }
-
   return (<>
     {settings != null && <SettingsApplyer settings={settings} />}
-    <MarkdownPage slug="start"/>
+    <LoadingSpinner color="#f00" loading={loading} />
+    {!loading && <Routes/>}
   </>);
 }
 
