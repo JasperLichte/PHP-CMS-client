@@ -12,7 +12,8 @@ export default function HomePage() {
             { user != null
                 ? (<div>
                     <p>{user?.email}</p>
-                    <Link to="/auth/logout">logout</Link>
+                    {user?.isAdmin && <div><Link to="/admin">Dashboard</Link></div>}
+                    <div><Link to="/auth/logout">logout</Link></div>
                 </div>)
                 : (<Link to="/auth/login">Login</Link>)
             }
