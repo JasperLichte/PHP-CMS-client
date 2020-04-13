@@ -13,9 +13,7 @@ export default function Grass() {
     }
 
     return (
-<g
-    className="grass"
->
+<g className="grass">
     {props.map(p => <Blade {...p} key={p.x} />)}
 </g>);
 }

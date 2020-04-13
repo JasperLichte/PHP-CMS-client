@@ -1,7 +1,55 @@
 .home-page {
+  position: relative;
 
-  & nav {
-    padding: 1rem;
+  h1 {
+    position: fixed;
+    top: 0;
+    left: 1em;
+    font-size: 2.5rem;
+    font-weight: 100;
+    color: #222;
+    text-shadow: 0 0 5px rgba(40, 40, 40, .2);
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: showHeader 4s ease forwards 1;
+    animation-delay: 6s;
+
+    @keyframes showHeader {
+      to {
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      transform: rotate(270deg);
+      transform-origin: left;
+      top: 70vh;
+      left: 24px;
+
+      @keyframes showHeader {
+        to {
+          width: 100vh;
+        }
+      }
+
+      @media screen and (max-height: 600px) {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-height: 460px) {
+        font-size: 1.5rem;
+      }
+
+      @media screen and (max-height: 340px) {
+        font-size: 1.2rem;
+        top: 90vh
+      }
+    }
   }
 
+}
+
+body.home {
+  overflow: hidden;
 }

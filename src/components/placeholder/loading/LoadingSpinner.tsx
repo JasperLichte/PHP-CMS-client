@@ -6,9 +6,10 @@ interface IProps {
     color: string,
     loading: boolean,
     delayMs?: number,
+    fullScreen?: boolean,
 }
 
-export default function LoadingSpinner({color, loading, delayMs}: IProps) {
+export default function LoadingSpinner({color, loading, delayMs, fullScreen}: IProps) {
     const [ isLoading, setIsLoading ] = useState(loading);
     useEffect(() => {
         if (!loading) {
@@ -16,7 +17,11 @@ export default function LoadingSpinner({color, loading, delayMs}: IProps) {
         }
     }, [loading, delayMs]);
 
-    return (<div className="loading loading-fs" data-active={(isLoading ? 'yes' : 'no')}>
+    if (fullScreen === undefined) {
+        fullScreen = false;
+    }
+
+    return (<div className={`loading ${fullScreen && ' loading-fs'}`} data-active={(isLoading ? 'yes' : 'no')}>
         <Loader
             color={color}
             loading={true}

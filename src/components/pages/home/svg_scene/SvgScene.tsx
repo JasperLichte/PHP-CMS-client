@@ -32,7 +32,7 @@ export default function SvgScene({links}: IProps) {
 
 function calculateCloudXPos(): number {
     const max = window.innerWidth - 160;
-    const min = 40;
+    const min = (window.innerWidth <= 600 ? 80 : 40);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 

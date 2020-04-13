@@ -41,6 +41,7 @@ export default function MarkdownPage({slug}: IProps) {
             loading={loading}
             color={settings?.find(s => s.key === 'ACCENT_COLOR')?.value || ''}
             delayMs={500}
+            fullScreen={false}
         />
         { page == null
             ? (error == null ? '' : <Error errorType={error}/>)
