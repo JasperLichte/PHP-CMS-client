@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import SunShine, {ISunshineProps} from "./SunShine";
 
 interface IProps {
@@ -9,12 +9,14 @@ interface IProps {
 }
 
 export default function Sun({radius, shines, shineLengthLong, shineLengthShort}: IProps) {
+    const [numberOfShines, setNumberOfShines] = useState(0);
+
     const cx = -140;
     const cy = 300;
 
-    const slice = 2 * Math.PI / shines;
+    const slice = 2 * Math.PI / numberOfShines;
     const shineProps: ISunshineProps[] = [];
-    for (let i = 0; i < shines; i++) {
+    for (let i = 0; i < numberOfShines; i++) {
         const r = radius + (i % 2 === 0 ? shineLengthLong : shineLengthShort);
         const angle = slice * i;
         shineProps.push({
@@ -29,7 +31,7 @@ export default function Sun({radius, shines, shineLengthLong, shineLengthShort}:
         });
     }
 
-    return (<g className="sun">
+    return (<g className="sun" onAnimationEnd={() => setNumberOfShines(shines)}>
         <circle cx={cx} cy={cy} r={radius} />
         {shineProps.map((l, i) => (
             <SunShine
