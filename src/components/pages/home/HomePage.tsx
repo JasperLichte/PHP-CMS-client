@@ -9,8 +9,13 @@ export default function HomePage() {
     const user = useSelector(userSelector);
 
     return (<div className="home-page">
-        <SvgScene/>
-        <nav>
+        <SvgScene links={[
+            {target: '/about', title: 'About'},
+            {target: '/team', title: 'Team'},
+            {target: '/einrichtung', title: 'Einrichtung'},
+            {target: '/impressum', title: 'Impressum'},
+        ]}/>
+        {/*<nav>
             { user != null
                 ? (<div>
                     <p>{user?.email}</p>
@@ -19,6 +24,6 @@ export default function HomePage() {
                 </div>)
                 : (<Link to="/auth/login">Login</Link>)
             }
-        </nav>
+        </nav>*/}
     </div>);
 }

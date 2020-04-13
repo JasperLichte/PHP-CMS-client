@@ -66,13 +66,81 @@
       .sun-shine {
         stroke: yellow;
 
-        &:nth-of-type(odd) {
+        &:nth-of-type(even) {
           stroke: gold;
         }
 
         stroke-width: 2px;
       }
     }
+
+    .cloud {
+      cursor: pointer;
+      animation: moveInFL 3s ease 1 forwards;
+      animation-delay: 2s;
+      transform: translate(100vw, 0);
+      &:nth-of-type(odd) {
+        animation-name: moveInFR;
+        transform: translate(-100vw, 0);
+      }
+
+      @keyframes moveInFR {
+        from {
+          transform: translate(100vw, 0);
+        } to {
+          transform: translate(0, 0);
+        }
+      }
+      @keyframes moveInFL {
+        from {
+          transform: translate(-100vw, 0);
+        } to {
+            transform: translate(0, 0);
+          }
+      }
+      text {
+        font-size: 1.4rem;
+        fill: #222;
+      }
+
+      .base {
+        animation: wobbleBase 3s ease infinite alternate;
+
+        @keyframes wobbleBase {
+          from {
+            transform: translate(-5px, 0px);
+          } to {
+              transform: translate(5px, 0px);
+            }
+        }
+      }
+
+      .big {
+        animation: wobbleBig 2s ease infinite alternate;
+
+        @keyframes wobbleBig {
+          from {
+            transform: translate(-5px, 5px);
+          } to {
+              transform: translate(0px, 0px);
+          }
+        }
+      }
+
+      .small {
+        animation: wobbleSmall 3s ease infinite alternate;
+
+        @keyframes wobbleSmall {
+          from {
+            transform: translate(10px, 10px);
+          } to {
+              transform: translate(0px, 0px);
+            }
+        }
+      }
+
+    }
+
   }
 
   .ground {
