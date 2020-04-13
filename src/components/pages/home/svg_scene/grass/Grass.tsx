@@ -1,5 +1,5 @@
 import React from "react";
-import Blade, {IBladeProps} from "./blades/Blade";
+import Blade, {IBladeProps} from "./Blade";
 
 export default function Grass() {
     const props: IBladeProps[] = [];

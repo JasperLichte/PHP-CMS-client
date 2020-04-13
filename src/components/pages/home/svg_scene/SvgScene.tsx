@@ -3,7 +3,7 @@ import './SvgScene.scss';
 import Grass from "./grass/Grass";
 import Sun from "./sun/Sun";
 import Cloud from "./cloud/Cloud";
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 interface IProps {
     links: {target: string, title: string}[]

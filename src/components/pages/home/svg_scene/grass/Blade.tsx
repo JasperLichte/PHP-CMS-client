@@ -13,14 +13,15 @@ export default function Blade({x, width, height}: IBladeProps) {
         {x: x + width, y: height},
     ];
 
+    const animationDuration = (Math.floor(Math.random() * 3000 - 500)) + 500;
     const darkness = Math.floor(Math.random() * (101)) + 15;
-
     return <polygon
         className="blade"
         points={points.map(p => ({...p, y: p.y + (120 - height)})).map(p => `${p.x} ${p.y}`).join(', ')}
         fill={`rgb(${darkness}, 140, ${darkness})`}
         style={{
-            animationDuration: `${(Math.floor(Math.random() * 3000 - 500)) + 500}ms`
+            animationDuration: `${animationDuration}ms, 2s`,
+            animationDelay: `0s, ${animationDuration}ms`
         }}
     />;
 }

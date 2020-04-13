@@ -23,7 +23,7 @@
       transform: translateY(calc(100% - 120px));
 
       .blade {
-        animation: grow ease;
+        animation: grow, wobble infinite alternate;
         transform-origin: 50% 100%;
 
         @keyframes grow {
@@ -32,6 +32,15 @@
           }
           to {
             transform: scaleY(1);
+          }
+        }
+
+        @keyframes wobble {
+          from {
+            transform: translateY(0);
+          }
+          to {
+            transform: translateY(20px);
           }
         }
       }
