@@ -57,7 +57,7 @@ export default function App({license}: IProps) {
 
   return (<>
     {settings != null && <SettingsApplyer settings={settings} />}
-    <LoadingSpinner color="#f00" loading={loading} />
+    <LoadingSpinner color="#0a0" loading={loading} />
     {!loading && <Routes user={user} />}
   </>);
 }

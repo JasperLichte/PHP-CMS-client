@@ -3,11 +3,13 @@ import {Link} from "react-router-dom";
 import './HomePage.scss';
 import {useSelector} from "react-redux";
 import {userSelector} from "../../../selectors/selectors";
+import SvgScene from "./svg_scene/SvgScene";
 
 export default function HomePage() {
     const user = useSelector(userSelector);
 
     return (<div className="home-page">
+        <SvgScene/>
         <nav>
             { user != null
                 ? (<div>

@@ -18,7 +18,7 @@ export default function StatisticsPage() {
     }, [setStatistics]);
 
     return (<AdminPage className="statistics">
-        <LoadingSpinner color="#f00" loading={loading} />
+        <LoadingSpinner color="#0a0" loading={loading} />
         {statistics != null && <>
             <h1>{statistics?.totalRequests}</h1>
         </>}
