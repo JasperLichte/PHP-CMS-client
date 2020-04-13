@@ -15,9 +15,7 @@ export interface IRouterProps {
 }
 
 export default function Routes(props: IRouterProps) {
-    useEffect(() => {
-        document.body.className = '';
-    }, []);
+    document.body.className = '';
     return (<Router>
         <Switch>
             <Route path="/auth">
