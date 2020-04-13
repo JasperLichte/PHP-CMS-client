@@ -5,6 +5,18 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    animation: sky 2s ease forwards;
+    animation-delay: 4s;
+    background-image: radial-gradient(at top right, #458f94, #e2fdff, #e2fdff);
+    background-position: bottom left;
+    background-size: 300%;
+
+    @keyframes sky {
+      to {
+        background-position: center center;
+        background-size: 100%;
+      }
+    }
 
     .grass {
       transform: translateY(calc(100vh - 120px));
@@ -21,6 +33,43 @@
             transform: scaleY(1);
           }
         }
+      }
+    }
+
+    .sun {
+      fill: yellow;
+      transform-origin: 150px 150px;
+      animation: moveIn 5s ease-in-out 1 forwards;
+
+      @keyframes moveIn {
+        0% {
+          transform: translate(0, 0) scale(.5);
+        }
+        100% {
+            transform: translate(100vw, -180px) scale(1);
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        animation-duration: 4s;
+        @keyframes moveIn {
+          0% {
+            transform: translate(0, 0) scale(.4);
+          }
+          100% {
+            transform: translate(calc(100vw - 40px), -180px) scale(.7);
+          }
+        }
+      }
+
+      .sun-shine {
+        stroke: yellow;
+
+        &:nth-of-type(odd) {
+          stroke: gold;
+        }
+
+        stroke-width: 2px;
       }
     }
   }
