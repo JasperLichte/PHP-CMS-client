@@ -3,7 +3,7 @@ import Blade, {IBladeProps} from "./Blade";
 
 export default function Grass() {
     const props: IBladeProps[] = [];
-    for (let i = 0; i < 800; i++) {
+    for (let i = 0; i < (window.innerWidth / 8); i++) {
         const height = Math.floor(Math.random() * (101)) + 60;
         props.push({
             x: i * 8,
