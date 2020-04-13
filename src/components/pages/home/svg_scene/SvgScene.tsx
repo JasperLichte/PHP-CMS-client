@@ -9,5 +9,6 @@ export default function SvgScene() {
             <Sun radius={80} shineLengthLong={60} shineLengthShort={70} shines={16} />
             <Grass/>
         </svg>
+        <div className="ground" />
     </div>);
 }
