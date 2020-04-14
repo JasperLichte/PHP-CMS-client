@@ -33,7 +33,7 @@ function calculateCloudXPos(): number {
     let min = (window.innerWidth <= 600 ? 80 : 40);
     let max = window.innerWidth - 160;
 
-    if (window.innerWidth > 1000) {
+    if (window.innerWidth > 1080) {
         min = ((window.innerWidth - 1000) / 2);
         max = window.innerWidth - ((window.innerWidth - 1000) / 2);
     }
