@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "86b28cbba0b5392638749c1c400c5167",
+    "revision": "e03fdbfeed8fd02b90979f2286a27477",
     "url": "/jaspress-client/index.html"
   },
   {
-    "revision": "86be270eae284bc34d50",
-    "url": "/jaspress-client/static/css/main.6492478b.chunk.css"
+    "revision": "fb928ab195bd3087dd0e",
+    "url": "/jaspress-client/static/css/main.f199cb50.chunk.css"
   },
   {
     "revision": "91d94e5a43de8c854aa4",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/jaspress-client/static/js/2.304d823e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "86be270eae284bc34d50",
+    "revision": "fb928ab195bd3087dd0e",
     "url": "/jaspress-client/static/js/main.1839c506.chunk.js"
   },
   {
