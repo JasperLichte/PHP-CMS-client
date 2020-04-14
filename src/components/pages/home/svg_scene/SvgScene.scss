@@ -49,7 +49,13 @@
     .sun {
       fill: yellow;
       transform-origin: 150px 150px;
-      animation: moveIn 5s ease-in-out 1 forwards;
+      animation: moveIn, shine;
+      animation-fill-mode: forwards, forwards;
+      animation-duration: 5s, 4s;
+      animation-delay: 0s, 5s;
+      animation-direction: normal, alternate;
+      animation-iteration-count: 1, infinite;
+      animation-timing-function: ease-in-out, ease;
 
       @keyframes moveIn {
         0% {
@@ -59,9 +65,18 @@
             transform: translate(100vw, -180px) scale(1);
         }
       }
+      @keyframes shine {
+         0% {
+           fill: yellow;
+         }
+         100% {
+           fill: gold;
+         }
+       }
 
       @media screen and (max-width: 700px) {
-        animation-duration: 4s;
+        animation-duration: 4s, 4s;
+        animation-delay: 0s, 4s;
         @keyframes moveIn {
           0% {
             transform: translate(0, 0) scale(.4);
@@ -85,9 +100,16 @@
 
     .cloud {
       cursor: pointer;
-      animation: moveInFL 3s ease 1 forwards;
-      animation-delay: 2s;
       transform: translate(100vw, 0);
+
+      animation-name: moveInFL, cloudColorChange;
+      animation-duration: 3s;
+      animation-delay: 2s;
+      animation-iteration-count: 1;
+      animation-timing-function: ease;
+      animation-direction: normal;
+      animation-fill-mode: forwards;
+
       &:nth-of-type(odd) {
         animation-name: moveInFR;
         transform: translate(-100vw, 0);
@@ -107,13 +129,38 @@
             transform: translate(0, 0);
           }
       }
+
       text {
         font-size: 1.4rem;
         fill: #222;
       }
 
+      .base, .big, .small {
+        fill: #fff;
+
+        animation-duration: 2s, 12s;
+        animation-delay: 2s, 4s;
+        animation-iteration-count: infinite, infinite;
+        animation-timing-function: ease, ease;
+        animation-direction: alternate, alternate;
+        animation-fill-mode: forwards, forwards;
+      }
+
+      @keyframes cloudColorChange {
+        0% {
+          fill: #fee;
+        }
+        50% {
+          fill: #fff;
+        }
+        100% {
+          fill: #eff;
+        }
+      }
+
       .base {
-        animation: wobbleBase 3s ease infinite alternate;
+        animation-name: wobbleBase, cloudColorChange;
+        animation-duration: 2s, 12s;
 
         @keyframes wobbleBase {
           from {
@@ -125,7 +172,8 @@
       }
 
       .big {
-        animation: wobbleBig 2s ease infinite alternate;
+        animation-name: wobbleBig, cloudColorChange;
+        animation-duration: 2s, 12s;
 
         @keyframes wobbleBig {
           from {
@@ -137,7 +185,8 @@
       }
 
       .small {
-        animation: wobbleSmall 3s ease infinite alternate;
+        animation-name: wobbleSmall, cloudColorChange;
+        animation-duration: 2s, 12s;
 
         @keyframes wobbleSmall {
           from {

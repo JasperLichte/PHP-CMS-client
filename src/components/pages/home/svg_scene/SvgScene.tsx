@@ -23,7 +23,6 @@ export default function SvgScene({links}: IProps) {
                 pos={{x: calculateCloudXPos(), y: (i + 2) * 120 * scale}}
                 scale={scale}
                 animationDelay={3000 + (600 * i)}
-                color={'#fff'}
             />))}
         </svg>
         <div className="ground" />
@@ -31,8 +30,14 @@ export default function SvgScene({links}: IProps) {
 }
 
 function calculateCloudXPos(): number {
-    const max = window.innerWidth - 160;
-    const min = (window.innerWidth <= 600 ? 80 : 40);
+    let min = (window.innerWidth <= 600 ? 80 : 40);
+    let max = window.innerWidth - 160;
+
+    if (window.innerWidth > 1000) {
+        min = ((window.innerWidth - 1000) / 2);
+        max = window.innerWidth - ((window.innerWidth - 1000) / 2);
+    }
+
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
