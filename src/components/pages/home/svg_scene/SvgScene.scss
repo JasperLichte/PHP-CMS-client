@@ -52,16 +52,21 @@
       animation: moveIn, shine;
       animation-fill-mode: forwards, forwards;
       animation-duration: 5s, 4s;
-      animation-delay: 0s, 5s;
+      animation-delay: 2s, 7s;
       animation-direction: normal, alternate;
       animation-iteration-count: 1, infinite;
       animation-timing-function: ease-in-out, ease;
 
       @keyframes moveIn {
         0% {
+          opacity: 0;
           transform: translate(0, 0) scale(.5);
         }
+        25% {
+          opacity: .8;
+        }
         100% {
+            opacity: 1;
             transform: translate(100vw, -180px) scale(1);
         }
       }
@@ -76,12 +81,17 @@
 
       @media screen and (max-width: 700px) {
         animation-duration: 4s, 4s;
-        animation-delay: 0s, 4s;
+        animation-delay: 2s, 6s;
         @keyframes moveIn {
           0% {
+            opacity: 0;
             transform: translate(0, 0) scale(.4);
           }
+          25% {
+             opacity: .8;
+          }
           100% {
+            opacity: 1;
             transform: translate(calc(100vw - 40px), -180px) scale(.7);
           }
         }
@@ -111,6 +121,7 @@
       animation-fill-mode: forwards;
 
       &:nth-of-type(odd) {
+        animation-direction: normal, reverse;
         animation-name: moveInFR;
         transform: translate(-100vw, 0);
       }
@@ -154,7 +165,7 @@
           fill: #fff;
         }
         100% {
-          fill: #eff;
+          fill: #ffd;
         }
       }
 
