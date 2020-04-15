@@ -1,19 +1,51 @@
 import React from "react";
 import './Page.scss';
 import Nav from "./nav/Nav";
-import {Theme} from "../../../util/themes/themes";
+import { motion } from "framer-motion";
+import {useSelector} from "react-redux";
+import {themeSelector} from "../../../selectors/selectors";
 
-interface IProps {
-    theme: Theme,
-}
+const pageVariants = {
+    initial: {
+        opacity: 0,
+        x: '-100vw',
+        scale: 0.8,
+    },
+    in: {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+    },
+    out: {
+        opacity: 0,
+        x: '100vw',
+        scale: 1.2,
+    },
+};
 
-const Page: React.FC<IProps> = ({children, theme, }) => {
-    return <div className="page">
+const pageTransition = {
+    duration: 1,
+    type: 'tween',
+    transition: 'anticipate',
+
+};
+
+const Page: React.FC = ({children, }) => {
+    const theme = useSelector(themeSelector);
+
+    return <motion.div
+        className="page"
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransition}
+    >
         <Nav theme={theme} />
         <main>
             {children}
         </main>
-    </div>
+    </motion.div>
 };
 
 export default Page;

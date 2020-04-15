@@ -12,6 +12,7 @@ import Api from "../../util/api/Api";
 import Routes from "../routes/Routes";
 import './App.scss';
 import LoadingSpinner from "../placeholder/loading/LoadingSpinner";
+import {HashRouter as Router} from "react-router-dom";
 
 interface IProps {
   license: string,
@@ -55,11 +56,11 @@ export default function App({license}: IProps) {
     return <Error errorType={error} />;
   }
 
-  return (<>
+  return (<Router>
     {settings != null && <SettingsApplyer settings={settings} />}
     <LoadingSpinner color="#0a0" loading={loading} fullScreen={true} />
     {!loading && <Routes user={user} />}
-  </>);
+  </Router>);
 }
 
 function handlePreflightResponse(dispatch: Function) {

@@ -1,9 +1,19 @@
 export type Theme = {
-    navBarBg: string,
-    navBarFont: string,
+    nav: navTheme,
 };
 
+type navTheme = {
+    bg: string,
+    font: string,
+    activeBg: string,
+    activeFont: string,
+}
+
 export const defaultTheme: Theme = {
-    navBarBg: '#222',
-    navBarFont: '#fff',
+    nav: {
+        bg: '#222',
+        font: '#ccc',
+        activeFont: '#fff',
+        activeBg: 'transparent',
+    }
 };

@@ -1,6 +1,7 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {Theme} from "../../../../util/themes/themes";
+import './Nav.scss';
 
 interface IProps {
     theme: Theme,
@@ -8,9 +9,10 @@ interface IProps {
 
 const Nav: React.FC<IProps> = ({theme}) => {
     return <nav
+        className="nav"
         style={{
-            backgroundColor: theme.navBarBg,
-            color: theme.navBarFont,
+            backgroundColor: theme.nav.bg,
+            color: theme.nav.font,
         }}
     >
         <h1>
@@ -18,11 +20,20 @@ const Nav: React.FC<IProps> = ({theme}) => {
         </h1>
         <ul>
             {[
-                {target: '/about', title: 'Über uns'},
-                {target: '/team', title: 'Team'},
-                {target: '/einrichtung', title: 'Einrichtung'},
-                {target: '/impressum', title: 'Impressum'}
-            ].map(l => <li key={l.target}><Link to={l.target}>{l.title}</Link></li>)}
+                {target: '/-/about', title: 'Über uns'},
+                {target: '/-/team', title: 'Team'},
+                {target: '/-/einrichtung', title: 'Einrichtung'},
+                {target: '/-/impressum', title: 'Impressum'}
+            ].map(l => <li key={l.target}>
+                <NavLink
+                    to={l.target}
+                    activeClassName='active'
+                    activeStyle={{
+                        color: theme.nav.activeFont,
+                        backgroundColor: theme.nav.activeBg,
+                    }}
+                >{l.title}</NavLink>
+            </li>)}
         </ul>
     </nav>
 };

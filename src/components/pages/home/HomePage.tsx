@@ -9,10 +9,10 @@ export default function HomePage() {
 
     return (<div className="home-page">
         <SvgScene links={[
-            {target: '/about', title: 'Über uns'},
-            {target: '/team', title: 'Team'},
-            {target: '/einrichtung', title: 'Einrichtung'},
-            {target: '/impressum', title: 'Impressum'},
+            {target: '/-/about', title: 'Über uns'},
+            {target: '/-/team', title: 'Team'},
+            {target: '/-/einrichtung', title: 'Einrichtung'},
+            {target: '/-/impressum', title: 'Impressum'},
         ]}/>
         <h1>Kinderstube Sethweg e.V.</h1>
     </div>);

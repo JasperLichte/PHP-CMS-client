@@ -3,8 +3,6 @@ import Page from "../../util/models/Page";
 import RequestFactory from "../../util/api/RequestFactory";
 import MarkDownToJsx from "./MarkDownToJsx";
 import LoadingSpinner from "../placeholder/loading/LoadingSpinner";
-import {useSelector} from "react-redux";
-import {settingsSelector} from "../../selectors/selectors";
 import ErrorType, {errorTypeByHttpStatusCode} from "../../util/errors/ErrorType";
 import Error from "../error/Error";
 
@@ -16,7 +14,6 @@ export default function MarkdownPage({slug}: IProps) {
     const [loading, setLoading] = useState(true);
     const [page, setPage] = useState<Page|null>(null);
     const [error, setError] = useState<ErrorType|null>(null);
-    const settings = useSelector(settingsSelector);
 
     useEffect(() => {
         RequestFactory.getPage(slug).then(res => {
@@ -39,7 +36,7 @@ export default function MarkdownPage({slug}: IProps) {
     <section>
         <LoadingSpinner
             loading={loading}
-            color={settings?.find(s => s.key === 'ACCENT_COLOR')?.value || ''}
+            color="#0a0"
             delayMs={500}
             fullScreen={false}
         />
