@@ -1,7 +1,6 @@
 .nav {
+  position: relative;
+  z-index: 98;
   transition: background-color 1s ease;
-
-  a.active {
-
-  }
+  padding: 1em;
 }

@@ -1,0 +1,40 @@
+.edit-markdown-page {
+  height: 100%;
+  flex-grow: 1;
+  display: flex;
+
+  .left {
+    flex-grow: 1;
+    min-width: 400px;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      flex-grow: 1;
+    }
+  }
+
+  .markdown-to-jsx {
+    flex-grow: 1;
+    width: 50%;
+    max-width: none;
+    min-width: 400px;
+
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+
+  .save-btn {
+    position: fixed;
+    top: 6em;
+    right: 1em;
+    padding: 1em;
+    transition: opacity .4s ease;
+
+    &:disabled {
+      opacity: .4;
+    }
+  }
+}

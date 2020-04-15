@@ -1,12 +1,18 @@
 export type Theme = {
-    nav: navTheme,
+    nav: NavTheme,
+    footer: FooterTheme,
 };
 
-type navTheme = {
+type NavTheme = {
     bg: string,
     font: string,
     activeBg: string,
     activeFont: string,
+}
+
+type FooterTheme = {
+    bg: string,
+    font: string,
 }
 
 export const defaultTheme: Theme = {
@@ -15,5 +21,9 @@ export const defaultTheme: Theme = {
         font: '#ccc',
         activeFont: '#fff',
         activeBg: 'transparent',
+    },
+    footer: {
+        bg: '#222',
+        font: '#ccc',
     }
 };
