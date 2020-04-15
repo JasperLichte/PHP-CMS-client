@@ -10,7 +10,7 @@ const MarkDownToJsx = ({md, }: Props) => {
     const rootRef = useRef() as React.MutableRefObject<HTMLDivElement>;
 
     return (
-        <div className="markdown" ref={rootRef}>
+        <div className="markdown-to-jsx" ref={rootRef}>
             <Markdown
                 options={{}}
             >{md}</Markdown>

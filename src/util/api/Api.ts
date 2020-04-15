@@ -1,6 +1,7 @@
 import ApiResponse from "./ApiResponse";
 import RequestFactory from "./RequestFactory";
 import config from "../../config";
+import RequestBody from "./requests/RequestBody";
 
 class Api {
 
@@ -26,7 +27,7 @@ class Api {
     }
 
     private static post(path: string, license: string) {
-        return (body: {}) => {
+        return (body: RequestBody) => {
             return new Promise(async (resolve) => {
                 const json = await (await fetch(
                     `${Api.baseUrl}${path}`,
@@ -51,7 +52,7 @@ class Api {
         });
     }
 
-    public static async makePostRequest<T>(obj: T, url: string, body: {}): Promise<ApiResponse<T>> {
+    public static async makePostRequest<T>(obj: T, url: string, body: RequestBody): Promise<ApiResponse<T>> {
         return new Promise<ApiResponse<T>>((resolve) => {
             Api.post(url, RequestFactory.license)(body).then(res => {
                 // @ts-ignore

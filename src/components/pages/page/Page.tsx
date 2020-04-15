@@ -4,6 +4,7 @@ import Nav from "./nav/Nav";
 import { motion } from "framer-motion";
 import {useSelector} from "react-redux";
 import {themeSelector} from "../../../selectors/selectors";
+import {IRouterProps} from "../../routes/Routes";
 
 const pageVariants = {
     initial: {
@@ -30,7 +31,7 @@ const pageTransition = {
 
 };
 
-const Page: React.FC = ({children, }) => {
+const Page: React.FC<IRouterProps> = ({children, user}) => {
     const theme = useSelector(themeSelector);
 
     return <motion.div
@@ -42,9 +43,11 @@ const Page: React.FC = ({children, }) => {
         transition={pageTransition}
     >
         <Nav theme={theme} />
-        <main>
-            {children}
-        </main>
+        <div className="content">
+            <main>
+                {children}
+            </main>
+        </div>
     </motion.div>
 };
 

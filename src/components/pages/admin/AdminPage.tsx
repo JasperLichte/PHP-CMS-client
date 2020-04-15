@@ -6,7 +6,7 @@ interface IProps {
 }
 
 const AdminPage: React.FC<IProps> = ({children, className}) => {
-    return (<div className={`admin-page ${className && className}`}>
+    return (<>
         <nav>
             <ul>
                 <li><Link to="/">Start</Link></li>
@@ -17,7 +17,7 @@ const AdminPage: React.FC<IProps> = ({children, className}) => {
         <main>
             {children}
         </main>
-    </div>);
+    </>);
 };
 
 export default AdminPage;

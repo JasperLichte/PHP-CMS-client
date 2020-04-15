@@ -1,7 +1,7 @@
 enum ErrorType {
-    INVALID_LICENSE = 0,
-    SERVER_ERROR = 1,
-    NOT_FOUND = 2,
+    INVALID_LICENSE = 1,
+    SERVER_ERROR = 2,
+    NOT_FOUND = 3,
 }
 
 export default ErrorType;

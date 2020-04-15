@@ -6,6 +6,8 @@ import LoginResponse from "./responses/auth/LoginResponse";
 import NoDataResponse from "./responses/NoDataResponse";
 import RegisterResponse from "./responses/auth/RegisterResponse";
 import GetStatisticsResponse from "./responses/admin/GetStatisticsResponse";
+import CreateMdPageRequestBody from "./requests/CreateMdPageRequestBody";
+import EditMdPageRequestBody from "./requests/EditMdPageRequestBody";
 
 export default class RequestFactory {
 
@@ -30,6 +32,22 @@ export default class RequestFactory {
         return Api.makeGetRequest<GetPageResponse>(
             new GetPageResponse(),
             `/page/get.php?p=${slug}`
+        );
+    }
+
+    public static async createPage(body: CreateMdPageRequestBody) {
+        return Api.makePostRequest<NoDataResponse>(
+            new NoDataResponse(),
+            `/admin/page/new.php`,
+            body
+        );
+    }
+
+    public static async editPage(body: EditMdPageRequestBody) {
+        return Api.makePostRequest<NoDataResponse>(
+            new NoDataResponse(),
+            `/admin/page/edit.php`,
+            body
         );
     }
 

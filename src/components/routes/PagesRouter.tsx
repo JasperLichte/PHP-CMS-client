@@ -13,11 +13,11 @@ const PagesRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
     const location = useLocation();
 
-    return (<Page>
+    return (<Page {...props}>
         <AnimatePresence exitBeforeEnter={false}>
             <Switch location={location} key={location.pathname}>
                 <Route path={`${path}/impressum`}>
-                    <ImpressumPage/>
+                    <ImpressumPage {...props} />
                 </Route>
                 <Route path={`${path}/*`}>
                     <PageContent theme={{...defaultTheme}}>
