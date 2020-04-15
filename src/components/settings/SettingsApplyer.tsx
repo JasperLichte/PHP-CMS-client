@@ -15,8 +15,6 @@ export default function SettingsApplyer({settings}: IProps) {
         }
     }`;
 
-    document.title = settings.find(s => s.key === 'APP_NAME')?.value || '';
-
     return (
         <style>{css}</style>
     );
