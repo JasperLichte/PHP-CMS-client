@@ -20,7 +20,7 @@ const PagesRouter = (props: IRouterProps) => {
                     <ImpressumPage {...props} />
                 </Route>
                 <Route path={`${path}/*`}>
-                    <PageContent theme={{...defaultTheme}}>
+                    <PageContent theme={{...defaultTheme}} {...props}>
                         <Error errorType={ErrorType.NOT_FOUND} message="Seite nicht gefunden" />
                     </PageContent>
                 </Route>

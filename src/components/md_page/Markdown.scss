@@ -1,8 +1,9 @@
 .markdown-to-jsx {
-  @import url(https://fonts.googleapis.com/css?family=Zilla+Slab&display=swap);
   color: #333;
-  font-family: 'Zilla Slab', serif;
   width: 100%;
+  padding: 1em;
+  max-width: 820px;
+  margin: 0 auto;
 
   @import './styles/headings.scss';
   @import './styles/lists.scss';

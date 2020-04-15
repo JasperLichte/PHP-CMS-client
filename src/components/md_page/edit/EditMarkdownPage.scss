@@ -1,5 +1,4 @@
 .edit-markdown-page {
-  height: 100%;
   flex-grow: 1;
   display: flex;
 
@@ -12,6 +11,7 @@
 
     textarea {
       flex-grow: 1;
+      padding: 1em .5em;
     }
   }
 
@@ -20,6 +20,7 @@
     width: 50%;
     max-width: none;
     min-width: 400px;
+    padding: 1em;
 
     @media screen and (max-width: 800px) {
       display: none;

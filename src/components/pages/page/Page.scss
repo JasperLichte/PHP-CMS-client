@@ -4,7 +4,7 @@
   flex-direction: column;
   width: 100vw;
   @media screen and (min-width: 720px) {
-    flex-direction: row;
+    flex-direction: column;
   }
 
   .content {

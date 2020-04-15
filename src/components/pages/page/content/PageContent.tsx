@@ -4,6 +4,8 @@ import './PageContent.scss';
 import {Theme} from "../../../../util/themes/themes";
 import {useDispatch} from "react-redux";
 import ActionType from "../../../../actions/ActionType";
+import Footer from "../footer/Footer";
+import {IRouterProps} from "../../../routes/Routes";
 
 const pageVariants = {
     initial: {
@@ -29,11 +31,11 @@ const pageTransition = {
     ease: 'anticipate',
 };
 
-interface IProps {
+interface IProps extends IRouterProps {
     theme: Theme,
 }
 
-const PageContent: React.FC<IProps> = ({children, theme}) => {
+const PageContent: React.FC<IProps> = ({children, theme, user}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -52,6 +54,7 @@ const PageContent: React.FC<IProps> = ({children, theme}) => {
         transition={pageTransition}
     >
         {children}
+        <Footer theme={theme} user={user}/>
     </motion.div>
 };
 

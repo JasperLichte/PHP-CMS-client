@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import {useSelector} from "react-redux";
 import {themeSelector} from "../../../selectors/selectors";
 import {IRouterProps} from "../../routes/Routes";
+import Footer from "./footer/Footer";
 
 const pageVariants = {
     initial: {
