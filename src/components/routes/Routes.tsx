@@ -13,7 +13,6 @@ export interface IRouterProps {
 }
 
 export default function Routes(props: IRouterProps) {
-    document.body.className = '';
     return (<Switch>
         <Route path="/auth">
             <AuthRouter {...props} />

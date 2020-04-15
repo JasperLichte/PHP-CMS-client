@@ -5,6 +5,8 @@ import SvgScene from "./svg_scene/SvgScene";
 export default function HomePage() {
     useEffect(() => {
         document.body.classList.add('home');
+
+        return () => document.body.classList.remove('home')
     }, []);
 
     return (<div className="home-page">

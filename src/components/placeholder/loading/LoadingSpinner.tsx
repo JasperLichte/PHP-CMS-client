@@ -13,7 +13,9 @@ export default function LoadingSpinner({color, loading, delayMs, fullScreen}: IP
     const [ isLoading, setIsLoading ] = useState(loading);
     useEffect(() => {
         if (!loading) {
-            setTimeout(() => setIsLoading(false), delayMs || 0);
+            const timeOut = setTimeout(() => setIsLoading(false), delayMs || 0);
+
+            return () => clearTimeout(timeOut);
         }
     }, [loading, delayMs]);
 
