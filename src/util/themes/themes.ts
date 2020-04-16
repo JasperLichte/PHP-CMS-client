@@ -6,8 +6,6 @@ export type Theme = {
 type NavTheme = {
     bg: string,
     font: string,
-    activeBg: string,
-    activeFont: string,
 }
 
 type FooterTheme = {
@@ -19,8 +17,6 @@ export const defaultTheme: Theme = {
     nav: {
         bg: '#222',
         font: '#ccc',
-        activeFont: '#fff',
-        activeBg: 'transparent',
     },
     footer: {
         bg: '#222',

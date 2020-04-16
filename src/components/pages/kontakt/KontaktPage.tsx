@@ -9,8 +9,8 @@ export default function KontaktPage(props: IRouterProps) {
         <PageContent
             theme={{
                 ...defaultTheme,
-                nav: {...defaultTheme.nav, bg: 'darkorange', font: '#fff',},
-                footer: {...defaultTheme.footer, bg: 'darkorange', font: '#fff',},
+                nav: {...defaultTheme.nav, bg: 'darkorange', font: '#000',},
+                footer: {...defaultTheme.footer, bg: 'darkorange', font: '#000',},
             }}
             {...props}
         >
