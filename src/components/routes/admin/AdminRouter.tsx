@@ -1,18 +1,19 @@
 import React from 'react'
 import {Redirect, Route, Switch, useRouteMatch, useHistory} from 'react-router-dom';
-import DashboardPage from "../pages/admin/dashboard/DashboardPage";
-import {IRouterProps} from "./Routes";
-import Error from "../error/Error";
-import ErrorType from "../../util/errors/ErrorType";
-import StatisticsPage from "../pages/admin/statistics/StatisticsPage";
-import AdminPage from "../pages/admin/AdminPage";
-import EditMarkdownPage from "../md_page/edit/EditMarkdownPage";
+import DashboardPage from "../../pages/admin/dashboard/DashboardPage";
+import {IRouterProps} from "../Routes";
+import Error from "../../error/Error";
+import ErrorType from "../../../util/errors/ErrorType";
+import StatisticsPage from "../../pages/admin/statistics/StatisticsPage";
+import AdminPage from "../../pages/admin/AdminPage";
+import EditMarkdownPage from "../../md_page/edit/EditMarkdownPage";
+import AdminAboutRouter from "./AdminAboutRouter";
 
-const AdminRouter = ({user}: IRouterProps) => {
+const AdminRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
     const history = useHistory();
 
-    if (user == null || !user.isAdmin) {
+    if (props.user == null || !props.user.isAdmin) {
         return <Redirect to="/auth/logout" />
     }
 
@@ -20,6 +21,11 @@ const AdminRouter = ({user}: IRouterProps) => {
         <Route exact path={`${path}/`}>
             <AdminPage>
                 <DashboardPage />
+            </AdminPage>
+        </Route>
+        <Route path={`${path}/about`}>
+            <AdminPage>
+                <AdminAboutRouter {...props} />
             </AdminPage>
         </Route>
         <Route exact path={`${path}/kontakt`}>

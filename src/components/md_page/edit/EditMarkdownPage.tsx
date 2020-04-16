@@ -10,10 +10,11 @@ import RequestFactory from "../../../util/api/RequestFactory";
 interface IProps {
     slug: string,
     title?: string,
+    groupId?: string,
     onSave: (error: ErrorType|null) => any,
 }
 
-export default function EditMarkdownPage({slug, onSave, title: _title}: IProps) {
+export default function EditMarkdownPage({slug, onSave, title: _title, groupId}: IProps) {
     const {page, error, loading} = useMarkdownPage(slug);
     const [md, setMd] = useState('');
     const [title, setTitle] = useState(_title || '');
@@ -30,6 +31,7 @@ export default function EditMarkdownPage({slug, onSave, title: _title}: IProps) 
             p: slug,
             content: md,
             title: title,
+            group: groupId || '',
         });
         return errorTypeByHttpStatusCode(res.status);
     }
@@ -48,7 +50,7 @@ export default function EditMarkdownPage({slug, onSave, title: _title}: IProps) 
         {error && error !== ErrorType.NOT_FOUND && <Error errorType={error} />}
         {!loading && (<>
             <div className="left">
-                {error === ErrorType.NOT_FOUND && title === '' && (
+                {error === ErrorType.NOT_FOUND && !_title && (
                     <input
                         value={title}
                         onChange={e => setTitle(e.target.value)}

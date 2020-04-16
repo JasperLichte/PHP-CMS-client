@@ -4,7 +4,7 @@ import AuthRouter from "./AuthRouter";
 import HomePage from "../pages/home/HomePage";
 import Error from "../error/Error";
 import ErrorType from "../../util/errors/ErrorType";
-import AdminRouter from "./AdminRouter";
+import AdminRouter from "./admin/AdminRouter";
 import User from "../../util/models/User";
 import PagesRouter from "./PagesRouter";
 

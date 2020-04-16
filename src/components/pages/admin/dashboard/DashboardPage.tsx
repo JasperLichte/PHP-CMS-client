@@ -5,13 +5,16 @@ import './DashboardPage.scss';
 export default function DashboardPage() {
     return (<div className="dashboard-page">
         <ul>
-            <Link to="/admin/kontakt"><li style={{backgroundColor: 'tomato'}}>
+            <Link to="/admin/about"><li style={{backgroundColor: 'tomato'}}>
+                Über uns
+            </li></Link>
+            <Link to="/admin/kontakt"><li style={{backgroundColor: 'darkorange'}}>
                 Kontakt
             </li></Link>
-            <Link to="/admin/impressum"><li style={{backgroundColor: 'olivedrab'}}>
+            <Link to="/admin/impressum"><li style={{backgroundColor: 'purple', color: '#fff'}}>
                 Impressum
             </li></Link>
-            <Link to="/admin/statistics"><li style={{backgroundColor: 'darkorange'}}>
+            <Link to="/admin/statistics"><li style={{backgroundColor: '#222', color: '#fff'}}>
                 Statistiken
             </li></Link>
             <Link to="/auth/logout"><li style={{backgroundColor: '#5a021e', color: '#fff'}}>

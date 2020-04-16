@@ -9,6 +9,7 @@ import Page from "../pages/page/Page";
 import {IRouterProps} from "./Routes";
 import PageContent from "../pages/page/content/PageContent";
 import KontaktPage from "../pages/kontakt/KontaktPage";
+import AboutPage from "../pages/about/AboutPage";
 
 const PagesRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
@@ -17,6 +18,9 @@ const PagesRouter = (props: IRouterProps) => {
     return (<Page {...props}>
         <AnimatePresence exitBeforeEnter={false}>
             <Switch location={location} key={location.pathname}>
+                <Route path={`${path}/about`}>
+                    <AboutPage {...props} />
+                </Route>
                 <Route path={`${path}/kontakt`}>
                     <KontaktPage {...props} />
                 </Route>

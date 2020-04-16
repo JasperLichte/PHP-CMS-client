@@ -1,5 +1,5 @@
-import ResponseData from "./ResponseData";
-import Page from "../../models/Page";
+import ResponseData from "../ResponseData";
+import Page from "../../../models/Page";
 
 export default class GetPageResponse implements ResponseData {
 

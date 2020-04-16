@@ -1,6 +1,6 @@
 import Api from "./Api";
 import PreflightResponse from "./responses/PreflightResponse";
-import GetPageResponse from "./responses/GetPageResponse";
+import GetPageResponse from "./responses/pages/GetPageResponse";
 import GetConfigResponse from "./responses/GetConfigResponse";
 import LoginResponse from "./responses/auth/LoginResponse";
 import NoDataResponse from "./responses/NoDataResponse";
@@ -8,6 +8,7 @@ import RegisterResponse from "./responses/auth/RegisterResponse";
 import GetStatisticsResponse from "./responses/admin/GetStatisticsResponse";
 import CreateMdPageRequestBody from "./requests/CreateMdPageRequestBody";
 import EditMdPageRequestBody from "./requests/EditMdPageRequestBody";
+import GetPageGroupResponse from "./responses/pages/GetPageGroupResponse";
 
 export default class RequestFactory {
 
@@ -48,6 +49,20 @@ export default class RequestFactory {
             new NoDataResponse(),
             `/admin/page/edit.php`,
             body
+        );
+    }
+
+    public static async deletePage(slug: string) {
+        return Api.makeGetRequest<NoDataResponse>(
+            new NoDataResponse(),
+            `/admin/page/delete.php?p=${slug}`,
+        );
+    }
+
+    public static async getPageGroup(slug: string) {
+        return Api.makeGetRequest<GetPageGroupResponse>(
+            new GetPageGroupResponse(),
+            `/page/group/get.php?group=${slug}`,
         );
     }
 

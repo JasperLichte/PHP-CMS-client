@@ -1,0 +1,32 @@
+.about-admin-page {
+  flex-grow: 1;
+  padding: .4em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  table {
+    td {
+      padding: .4em .8em;
+
+      button {
+        border: 1px solid currentColor;
+        background: transparent;
+        font-size: 1em;
+        font-weight: 100;
+        padding: .4em .6em;
+        color: red;
+      }
+    }
+  }
+
+  .create-link {
+    font-size: 1.1em;
+    padding: .6em 1em;
+    margin: .4em 0;
+    background-color: #222;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+}
