@@ -5,6 +5,7 @@ import UserServices from "../../../../util/UserServices";
 import {useDispatch} from "react-redux";
 import ActionType from "../../../../actions/ActionType";
 import {Link, useHistory} from 'react-router-dom';
+import AuthPage from "../AuthPage";
 
 export default function LoginPage() {
     const [user, setUser] = useState<User|null>(null);
@@ -18,8 +19,13 @@ export default function LoginPage() {
         });
     }, [user, dispatch]);
 
-    return (<div className="login-page">
+    return (<AuthPage>
+        <h1>Anmelden</h1>
         <LoginForm onSubmit={(email, password) => {
+            if (!email || !password) {
+                return;
+            }
+
             UserServices.login(email, password).then(user => {
                 setUser(user);
                 if (user?.isAdmin) {
@@ -29,6 +35,6 @@ export default function LoginPage() {
                 }
             });
         }} />
-        <Link to="/auth/register">Sign up instead</Link>
-    </div>);
+        <Link to="/auth/register">Neuen Account erstellen</Link>
+    </AuthPage>);
 }

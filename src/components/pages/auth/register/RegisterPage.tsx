@@ -5,6 +5,7 @@ import UserServices from "../../../../util/UserServices";
 import {useDispatch} from "react-redux";
 import ActionType from "../../../../actions/ActionType";
 import {Link, useHistory} from 'react-router-dom';
+import AuthPage from "../AuthPage";
 
 export default function RegisterPage() {
     const [user, setUser] = useState<User|null>(null);
@@ -18,13 +19,16 @@ export default function RegisterPage() {
         });
     }, [user, dispatch]);
 
-    return (<div className="register-page">
+    return (<AuthPage>
+        <h1>Registrieren</h1>
         <RegisterForm onSubmit={(email, password) => {
             UserServices.register(email, password).then(user => {
-                setUser(user);
-                history.push('/');
+                if (email && password) {
+                    setUser(user);
+                    history.push('/');
+                }
             });
         }} />
-        <Link to="/auth/login">Log in instead</Link>
-    </div>);
+        <Link to="/auth/login">Mit bestehendem Account anmelden</Link>
+    </AuthPage>);
 }

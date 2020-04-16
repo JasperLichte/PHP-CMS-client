@@ -20,7 +20,7 @@ const Nav: React.FC<IProps> = ({theme}) => {
     >
         <h1>
             <button className="open-sidebar-btn" onClick={() => setIsOpen(!isOpen)}><span /></button>
-            <Link to="/">Kinderstube Sethweg e. V.</Link>
+            <Link to="/">Kinderstube Sethweg e.V.</Link>
         </h1>
         <ul>
             <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>
