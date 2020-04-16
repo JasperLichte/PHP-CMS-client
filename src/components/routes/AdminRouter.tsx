@@ -22,13 +22,14 @@ const AdminRouter = ({user}: IRouterProps) => {
                 <DashboardPage />
             </AdminPage>
         </Route>
+        <Route exact path={`${path}/kontakt`}>
+            <AdminPage>
+                <EditMarkdownPage slug="kontakt" title="Kontakt" onSave={(error => history.push('/-/kontakt'))} />
+            </AdminPage>
+        </Route>
         <Route exact path={`${path}/impressum`}>
             <AdminPage>
-                <EditMarkdownPage slug="impressum" title="Impressum" onSave={(error => {
-                    if (error == null) {
-                        return history.push('/-/impressum');
-                    }
-                })} />
+                <EditMarkdownPage slug="impressum" title="Impressum" onSave={(error => history.push('/-/impressum'))} />
             </AdminPage>
         </Route>
         <Route exact path={`${path}/statistics`}>
