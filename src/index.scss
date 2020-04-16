@@ -1,0 +1,21 @@
+body {
+  @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&family=Quicksand&display=swap');
+
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}

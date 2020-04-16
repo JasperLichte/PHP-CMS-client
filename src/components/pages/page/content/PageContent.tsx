@@ -4,8 +4,8 @@ import './PageContent.scss';
 import {Theme} from "../../../../util/themes/themes";
 import {useDispatch} from "react-redux";
 import ActionType from "../../../../actions/ActionType";
-import Footer from "../footer/Footer";
 import {IRouterProps} from "../../../routes/Routes";
+import Footer from "../footer/Footer";
 
 const pageVariants = {
     initial: {

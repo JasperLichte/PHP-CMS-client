@@ -1,19 +1,7 @@
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
 }
 
 a, a:valid, a:any-link, a:visited, a:active {
