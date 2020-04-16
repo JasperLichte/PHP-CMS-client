@@ -5,5 +5,6 @@ export default class EditMdPageRequestBody extends RequestBody {
     p: string = '';
     title: string = '';
     content: string = '';
+    group?: string = '';
 
 }

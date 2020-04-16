@@ -41,6 +41,7 @@ export default function EditMarkdownPage({slug, onSave, title: _title, groupId}:
             p: slug,
             content: md,
             title: title,
+            group: groupId || '',
         });
         return errorTypeByHttpStatusCode(res.status);
     }
