@@ -55,11 +55,13 @@
   }
 
   h1 {
+    position: relative;
     margin-top: 0;
     text-align: right;
 
     a {
       text-decoration: none;
+      padding-left: 50px;
     }
   }
 
@@ -127,6 +129,7 @@
       width: 400px;
       box-shadow: 0 0 5px rgba(0, 0, 0, .4);
       padding-top: 2em;
+      font-size: 1.2em;
 
       li {
         width: 100%;
