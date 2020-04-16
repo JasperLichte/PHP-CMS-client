@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import Statistics from "../../../../util/models/Statistics";
 import RequestFactory from "../../../../util/api/RequestFactory";
 import LoadingSpinner from "../../../placeholder/loading/LoadingSpinner";
+import './StatisticsPage.scss';
 
 export default function StatisticsPage() {
     const [statistics, setStatistics] = useState<Statistics|null>(null);
@@ -18,8 +19,20 @@ export default function StatisticsPage() {
 
     return (<>
         <LoadingSpinner color="#0a0" loading={loading} />
-        {statistics != null && <>
-            <h1>{statistics?.totalRequests}</h1>
-        </>}
+        {statistics != null && <div className="statistics-page">
+            <h1><span>{statistics?.totalRequests}</span> Aufrufe gesamt</h1>
+            <table>
+                <thead>
+                    <tr><th>Url</th><th>Aufrufe</th></tr>
+                </thead>
+                <tbody>
+                    {
+                        Object.keys(statistics?.requestsByPath).map(p => <tr key={p}>
+                            <td>{p}</td><td>{statistics?.requestsByPath[p]}</td>
+                        </tr>)
+                    }
+                </tbody>
+            </table>
+        </div>}
     </>);
 }

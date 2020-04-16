@@ -70,7 +70,7 @@ export default function EditMarkdownPage({slug, onSave, title: _title}: IProps) 
                     }
                 }}
                 disabled={slug === '' || md === ''}
-            >Save</button>
+            >Speichern</button>
         </>)}
     </div>);
 }

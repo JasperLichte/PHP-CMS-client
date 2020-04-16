@@ -1,0 +1,35 @@
+.statistics-page {
+  flex-grow: 1;
+  padding: .4em;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 1em 0;
+    font-weight: 100;
+    font-size: 1.4em;
+
+    > span {
+      font-size: 1.7em;
+    }
+  }
+
+  table {
+    th {
+      text-align: left;
+      background-color: #999;
+      color: #fff;
+      padding: .4em;
+    }
+    td {
+      padding: .4em 0;
+
+      &:nth-of-type(2) {
+        text-align: center;
+      }
+    }
+  }
+}

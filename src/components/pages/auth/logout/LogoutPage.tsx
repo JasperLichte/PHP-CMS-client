@@ -23,5 +23,5 @@ export default function LogoutPage() {
     if (loading) {
         return <></>;
     }
-    return <Redirect to="/auth/login" />
+    return <Redirect to="/" />
 }

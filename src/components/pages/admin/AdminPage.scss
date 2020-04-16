@@ -1,0 +1,34 @@
+.admin-page {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  nav {
+    border-bottom: 2px solid seagreen;
+    padding: .4em;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+
+      li {
+        padding: .8em;
+        background-color: seagreen;
+        color: #fff;
+        margin-right: .4em;
+        font-weight: 600;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  main {
+    display: flex;
+    flex-grow: 1;
+  }
+}

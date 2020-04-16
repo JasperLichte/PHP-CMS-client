@@ -29,10 +29,17 @@
 
   .save-btn {
     position: fixed;
-    top: 6em;
-    right: 1em;
-    padding: 1em;
+    width: 100px;
+    height: 100px;
+    font-size: 1.05em;
+    top: 4em;
+    right: .4em;
     transition: opacity .4s ease;
+    background-color: darkorange;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .2);
 
     &:disabled {
       opacity: .4;
