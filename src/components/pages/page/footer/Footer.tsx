@@ -17,7 +17,8 @@ const Footer: React.FC<IProps> = ({theme, user}) => {
             color: theme.footer.font,
         }}
     >
-        <div>
+        <p className="copyright">Copyright {(new Date()).getFullYear()}: Kinderstube Sethweg e.V.</p>
+        <div className="user-actions">
             {user == null
                 ? <Link to="/auth/login">Login</Link>
                 : <>
@@ -25,6 +26,9 @@ const Footer: React.FC<IProps> = ({theme, user}) => {
                     <div><Link to="/auth/logout">Logout</Link></div>
                     {user?.isAdmin && <div><Link to="/admin">Dashboard</Link></div>}
                 </>}
+        </div>
+        <div className="jasper-lichte">
+            Developed with Love by <a href="http://jasper.lichte.info">Jasper Lichte</a>
         </div>
     </footer>
 };

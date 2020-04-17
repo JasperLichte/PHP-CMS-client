@@ -13,7 +13,7 @@ export default function HomePage() {
         <SvgScene links={[
             {target: '/-/about', title: 'Über uns'},
             {target: '/-/team', title: 'Team'},
-            {target: '/-/einrichtung', title: 'Einrichtung'},
+            {target: '/-/whats-important', title: 'Unser Motto'},
             {target: '/-/impressum', title: 'Impressum'},
         ]}/>
         <h1>Kinderstube Sethweg e.V.</h1>
