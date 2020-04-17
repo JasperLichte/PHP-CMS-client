@@ -2,11 +2,10 @@
   position: relative;
   transition: background-color 1s ease;
   z-index: 99;
-  transform: translateY(100%);
   max-width: 1000px;
   width: 100vw;
   margin: 0 auto;
-  padding: .6em .4em;
+  padding: calc(2vw + 6em) .4em .6em .4em;
   font-size: .9em;
 
   &::before, &::after {
