@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/jaspress-client/precache-manifest.eadde3d4df06b1509b205c773f374d27.js"
+  "/jaspress-client/precache-manifest.cc48644d062a7f90c33ad83f87d40410.js"
 );
 
 self.addEventListener('message', (event) => {
