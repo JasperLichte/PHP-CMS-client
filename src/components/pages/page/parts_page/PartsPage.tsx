@@ -5,6 +5,7 @@ import {IRouterProps} from "../../../routes/Routes";
 import MarkDownToJsx from "../../../md_page/MarkDownToJsx";
 import useMarkdownPageGroup from "../../../../hooks/useMarkdownPageGroup";
 import LoadingSpinner from "../../../placeholder/loading/LoadingSpinner";
+import './PartsPage.scss';
 
 interface IProps extends IRouterProps {
     slug: string,
@@ -16,11 +17,23 @@ export default function PartsPage({slug, theme, ...props}: IProps) {
 
     return (
         <PageContent theme={theme} {...props}>
-            <div>
+            <div className="parts-page">
                 <LoadingSpinner color="#0a0" loading={isLoading} />
-                {pages.map(p => (p != null && <section key={p?.slug}>
-                    <MarkDownToJsx md={p.markdown?.content || ''} />
-                </section>))}
+                {pages.map((p, i) => {
+                    const _theme = theme.sections.colors[i % theme.sections.colors.length];
+                    return (p != null && (
+                        <section
+                            key={p?.slug}
+                            style={{
+                                backgroundColor: _theme.bg,
+                                color: _theme.font,
+                                zIndex: 999 - i,
+                            }}
+                        >
+                            <MarkDownToJsx md={p.markdown?.content || ''} />
+                        </section>)
+                    )
+                })}
             </div>
         </PageContent>
     );

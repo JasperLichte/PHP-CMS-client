@@ -1,7 +1,14 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import './DashboardPage.scss';
-import {aboutTheme, defaultTheme, impressumTheme, kontaktTheme, teamTheme} from "../../../../util/themes/themes";
+import {
+    aboutTheme,
+    defaultTheme,
+    impressumTheme,
+    kontaktTheme,
+    teamTheme,
+    whatsImportantTheme
+} from "../../../../util/themes/themes";
 
 export default function DashboardPage() {
     const links = [
@@ -14,6 +21,11 @@ export default function DashboardPage() {
             target: '/admin/about',
             title: 'Über uns',
             theme: aboutTheme,
+        },
+        {
+            target: '/admin/whats-important',
+            title: 'Was uns wichtig ist',
+            theme: whatsImportantTheme,
         },
         {
             target: '/admin/kontakt',
@@ -33,7 +45,7 @@ export default function DashboardPage() {
         {
             target: '/auth/logout',
             title: 'Abmelden',
-            theme: {...defaultTheme, nav: {...defaultTheme.nav, bg: '#5a021e', font: '#fff'}},
+            theme: {...defaultTheme, nav: {...defaultTheme.nav, bg: '#C3423F', font: '#fff'}},
         },
     ];
 

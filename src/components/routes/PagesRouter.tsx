@@ -1,6 +1,13 @@
 import React from 'react'
 import {Route, Switch, useLocation, useRouteMatch} from 'react-router-dom';
-import {aboutTheme, defaultTheme, impressumTheme, kontaktTheme, teamTheme} from "../../util/themes/themes";
+import {
+    aboutTheme,
+    defaultTheme,
+    impressumTheme,
+    kontaktTheme,
+    teamTheme,
+    whatsImportantTheme
+} from "../../util/themes/themes";
 import {AnimatePresence} from "framer-motion";
 import Error from "../error/Error";
 import ErrorType from "../../util/errors/ErrorType";
@@ -22,6 +29,9 @@ const PagesRouter = (props: IRouterProps) => {
                 </Route>
                 <Route path={`${path}/team`}>
                     <PartsPage slug="team" {...props} theme={teamTheme} />
+                </Route>
+                <Route path={`${path}/whats-important`}>
+                    <PartsPage slug="whats-important" {...props} theme={whatsImportantTheme} />
                 </Route>
                 <Route path={`${path}/kontakt`}>
                     <PageContent theme={kontaktTheme} {...props}>

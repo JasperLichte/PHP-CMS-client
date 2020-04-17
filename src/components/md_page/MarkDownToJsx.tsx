@@ -11,10 +11,8 @@ const MarkDownToJsx = ({md, }: Props) => {
 
     return (
         <div className="markdown-to-jsx" ref={rootRef}>
-            <Markdown
-                options={{}}
-            >{md}</Markdown>
+            <Markdown>{md}</Markdown>
         </div>);
-}
+};
 
 export default MarkDownToJsx
