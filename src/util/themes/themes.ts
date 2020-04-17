@@ -20,37 +20,25 @@ type SectionsTheme = {
 
 export const defaultTheme: Theme = {
     nav: {
-        bg: '#222',
-        font: '#ccc',
+        bg: '#748076',
+        font: '#fff',
     },
     footer: {
-        bg: '#222',
-        font: '#ccc',
+        bg: '#748076',
+        font: '#fff',
     },
     sections: {
         colors: [
-            {bg: '#F7F7F7', font: '#222'},
             {bg: '#748076', font: '#fff'},
+            {bg: '#F7F7F7', font: '#222'},
+            {bg: '#D2C2B1', font: '#222'},
             {bg: '#E9E3DD', font: '#222'},
             {bg: '#F3EDE2', font: '#222'},
-            {bg: '#D2C2B1', font: '#222'},
         ]
     }
 };
 
-export const whatsImportantTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#4B4E50', font: '#fff',},
-    footer: {...defaultTheme.footer, bg: '#4B4E50', font: '#fff',},
-    sections: {...defaultTheme.sections,
-        colors: [
-            {bg: '#4B4E50', font: '#fff'},
-            {bg: '#BADCBB', font: '#222'},
-            {bg: '#F29B9D', font: '#222'},
-            {bg: '#F47B91', font: '#222'},
-            {bg: '#FBF8CB', font: '#222'},
-        ],
-    },
-};
+export const whatsImportantTheme = {...defaultTheme,};
 
 export const faqTheme = {...defaultTheme,
     nav: {...defaultTheme.nav, bg: '#FF7842', font: '#fff',},
