@@ -38,7 +38,7 @@ export const defaultTheme: Theme = {
     }
 };
 
-export const teamTheme = {...defaultTheme,
+export const whatsImportantTheme = {...defaultTheme,
     nav: {...defaultTheme.nav, bg: '#4B4E50', font: '#fff',},
     footer: {...defaultTheme.footer, bg: '#4B4E50', font: '#fff',},
     sections: {...defaultTheme.sections,
@@ -52,7 +52,7 @@ export const teamTheme = {...defaultTheme,
     },
 };
 
-export const aboutTheme = {...defaultTheme,
+export const faqTheme = {...defaultTheme,
     nav: {...defaultTheme.nav, bg: '#FF7842', font: '#fff',},
     footer: {...defaultTheme.footer, bg: '#FF7842', font: '#fff',},
     sections: {...defaultTheme.sections,
@@ -60,27 +60,27 @@ export const aboutTheme = {...defaultTheme,
             {bg: '#FF7842', font: '#fff'},
             {bg: '#F6F9FA', font: '#222'},
             {bg: '#AFACA9', font: '#222'},
-            {bg: '#5DA9E9', font: '#fff'},
+            {bg: '#5DA9E9', font: '#222'},
             {bg: '#E5F4E3', font: '#222'},
         ],
     },
 };
 
-export const whatsImportantTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#068D9D', font: '#fff',},
-    footer: {...defaultTheme.footer, bg: '#068D9D', font: '#fff',},
+export const teamTheme = {...defaultTheme,
+    nav: {...defaultTheme.nav, bg: '#F6F6F6', font: '#222',},
+    footer: {...defaultTheme.footer, bg: '#F6F6F6', font: '#222',},
     sections: {...defaultTheme.sections,
         colors: [
-            {bg: '#068D9D', font: '#fff'},
-            {bg: '#53599A', font: '#fff'},
-            {bg: '#50E3C2', font: '#222'},
-            {bg: '#6D9DC5', font: '#222'},
-            {bg: '#AEECEF', font: '#222'},
+            {bg: '#F6F6F6', font: '#222'},
+            {bg: '#9CA6AB', font: '#222'},
+            {bg: '#FF5A09', font: '#fff'},
+            {bg: '#36454C', font: '#fff'},
+            {bg: '#D5DDE0', font: '#222'},
         ],
     },
 };
 
-export const faqTheme = {...defaultTheme,
+export const aboutTheme = {...defaultTheme,
     nav: {...defaultTheme.nav, bg: '#742C60', font: '#fff',},
     footer: {...defaultTheme.footer, bg: '#742C60', font: '#fff',},
     sections: {...defaultTheme.sections,
