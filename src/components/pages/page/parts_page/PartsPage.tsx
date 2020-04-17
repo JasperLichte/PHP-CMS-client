@@ -18,7 +18,7 @@ export default function PartsPage({slug, theme, ...props}: IProps) {
     return (
         <PageContent theme={theme} {...props}>
             <div className="parts-page">
-                <LoadingSpinner color="#0a0" loading={isLoading} />
+                <LoadingSpinner color="#0a0" loading={isLoading} fullScreen={true} />
                 {pages.map((p, i) => {
                     const _theme = theme.sections.colors[i % theme.sections.colors.length];
                     return (p != null && (
