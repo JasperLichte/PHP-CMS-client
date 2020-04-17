@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import './DashboardPage.scss';
 import {
     aboutTheme,
-    defaultTheme,
+    defaultTheme, faqTheme,
     impressumTheme,
     kontaktTheme,
     teamTheme,
@@ -26,6 +26,11 @@ export default function DashboardPage() {
             target: '/admin/whats-important',
             title: 'Was uns wichtig ist',
             theme: whatsImportantTheme,
+        },
+        {
+            target: '/admin/faq',
+            title: 'Häufig gestellte Fragen',
+            theme: faqTheme,
         },
         {
             target: '/admin/kontakt',

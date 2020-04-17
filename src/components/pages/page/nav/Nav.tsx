@@ -29,6 +29,7 @@ const Nav: React.FC<IProps> = ({theme}) => {
                 {target: '/-/about', title: 'Über uns'},
                 {target: '/-/team', title: 'Das Team'},
                 {target: '/-/whats-important', title: 'Was uns wichtig ist'},
+                {target: '/-/faq', title: 'Häufig gestellte Fragen'},
                 {target: '/-/kontakt', title: 'Kontakt'},
                 {target: '/-/impressum', title: 'Impressum'},
             ].map(l => <li key={l.target}>

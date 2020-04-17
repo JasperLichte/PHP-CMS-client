@@ -2,7 +2,7 @@ import React from 'react'
 import {Route, Switch, useLocation, useRouteMatch} from 'react-router-dom';
 import {
     aboutTheme,
-    defaultTheme,
+    defaultTheme, faqTheme,
     impressumTheme,
     kontaktTheme,
     teamTheme,
@@ -32,6 +32,9 @@ const PagesRouter = (props: IRouterProps) => {
                 </Route>
                 <Route path={`${path}/whats-important`}>
                     <PartsPage slug="whats-important" {...props} theme={whatsImportantTheme} />
+                </Route>
+                <Route path={`${path}/faq`}>
+                    <PartsPage slug="faq" {...props} theme={faqTheme} />
                 </Route>
                 <Route path={`${path}/kontakt`}>
                     <PageContent theme={kontaktTheme} {...props}>

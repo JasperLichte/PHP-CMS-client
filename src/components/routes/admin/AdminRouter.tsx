@@ -29,6 +29,9 @@ const AdminRouter = (props: IRouterProps) => {
         <Route path={`${path}/whats-important`}>
             <AdminSubPagePartsRouter slug="whats-important" {...props} />
         </Route>
+        <Route path={`${path}/faq`}>
+            <AdminSubPagePartsRouter slug="faq" {...props} />
+        </Route>
         <Route exact path={`${path}/kontakt`}>
             <EditMarkdownPage slug="kontakt" title="Kontakt" onSave={(error => history.push('/-/kontakt'))} />
         </Route>

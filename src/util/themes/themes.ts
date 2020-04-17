@@ -80,6 +80,20 @@ export const whatsImportantTheme = {...defaultTheme,
     },
 };
 
+export const faqTheme = {...defaultTheme,
+    nav: {...defaultTheme.nav, bg: '#742C60', font: '#fff',},
+    footer: {...defaultTheme.footer, bg: '#742C60', font: '#fff',},
+    sections: {...defaultTheme.sections,
+        colors: [
+            {bg: '#742C60', font: '#fff'},
+            {bg: '#AF87A4', font: '#222'},
+            {bg: '#C7EAD1', font: '#222'},
+            {bg: '#030504', font: '#fff'},
+            {bg: '#2C7440', font: '#fff'},
+        ],
+    },
+};
+
 export const impressumTheme = {...defaultTheme,
     nav: {...defaultTheme.nav, bg: '#5BC0EB', font: '#222',},
     footer: {...defaultTheme.footer, bg: '#5BC0EB', font: '#222',},
