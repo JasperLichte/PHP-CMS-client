@@ -55,11 +55,13 @@ export default function EditMarkdownPage({slug, onSave, title: _title, groupId}:
                     <input
                         value={title}
                         onChange={e => setTitle(e.target.value)}
+                        placeholder="Titel"
                     />)
                 }
                 <textarea
                     value={md}
                     onChange={(e) => setMd(e.target.value)}
+                    placeholder="Markdown"
                 />
             </div>
             <MarkDownToJsx md={md}/>
@@ -72,7 +74,7 @@ export default function EditMarkdownPage({slug, onSave, title: _title, groupId}:
                         edit().then(onSave);
                     }
                 }}
-                disabled={slug === '' || md === ''}
+                disabled={slug === '' || md === '' || title === ''}
             >Speichern</button>
         </>)}
     </div>);

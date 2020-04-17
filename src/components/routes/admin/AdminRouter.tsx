@@ -5,9 +5,8 @@ import {IRouterProps} from "../Routes";
 import Error from "../../error/Error";
 import ErrorType from "../../../util/errors/ErrorType";
 import StatisticsPage from "../../pages/admin/statistics/StatisticsPage";
-import AdminPage from "../../pages/admin/AdminPage";
 import EditMarkdownPage from "../../md_page/edit/EditMarkdownPage";
-import AdminAboutRouter from "./AdminAboutRouter";
+import AdminSubPagePartsRouter from "./AdminSubPagePartsRouter";
 
 const AdminRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
@@ -19,29 +18,22 @@ const AdminRouter = (props: IRouterProps) => {
 
     return (<Switch>
         <Route exact path={`${path}/`}>
-            <AdminPage>
-                <DashboardPage />
-            </AdminPage>
+            <DashboardPage />
         </Route>
         <Route path={`${path}/about`}>
-            <AdminPage>
-                <AdminAboutRouter {...props} />
-            </AdminPage>
+            <AdminSubPagePartsRouter slug="about" {...props} />
+        </Route>
+        <Route path={`${path}/team`}>
+            <AdminSubPagePartsRouter slug="team" {...props} />
         </Route>
         <Route exact path={`${path}/kontakt`}>
-            <AdminPage>
-                <EditMarkdownPage slug="kontakt" title="Kontakt" onSave={(error => history.push('/-/kontakt'))} />
-            </AdminPage>
+            <EditMarkdownPage slug="kontakt" title="Kontakt" onSave={(error => history.push('/-/kontakt'))} />
         </Route>
         <Route exact path={`${path}/impressum`}>
-            <AdminPage>
-                <EditMarkdownPage slug="impressum" title="Impressum" onSave={(error => history.push('/-/impressum'))} />
-            </AdminPage>
+            <EditMarkdownPage slug="impressum" title="Impressum" onSave={(error => history.push('/-/impressum'))} />
         </Route>
         <Route exact path={`${path}/statistics`}>
-            <AdminPage>
-                <StatisticsPage />
-            </AdminPage>
+            <StatisticsPage />
         </Route>
         <Route path="*">
             <Error errorType={ErrorType.NOT_FOUND}/>

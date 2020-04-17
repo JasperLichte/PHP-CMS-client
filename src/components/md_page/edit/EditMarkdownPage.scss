@@ -9,9 +9,28 @@
     display: flex;
     flex-direction: column;
 
+    input {
+      padding: .6em .4em;
+      font-size: 1.1em;
+      border: 1px solid #000;
+      border-top: none;
+      border-bottom: none;
+    }
+
     textarea {
       flex-grow: 1;
-      padding: 1em .5em;
+      padding: .8em .4em;
+      border: 1px solid #000;
+    }
+
+    input, textarea {
+      background-color: #ccc;
+
+      &:focus {
+        background-color: #eee;
+        outline: 2px solid darkorange;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, .2);
+      }
     }
   }
 

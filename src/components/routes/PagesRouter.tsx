@@ -1,15 +1,14 @@
 import React from 'react'
 import {Route, Switch, useLocation, useRouteMatch} from 'react-router-dom';
-import {defaultTheme} from "../../util/themes/themes";
+import {aboutTheme, defaultTheme, impressumTheme, kontaktTheme, teamTheme} from "../../util/themes/themes";
 import {AnimatePresence} from "framer-motion";
-import ImpressumPage from "../pages/impressum/ImpressumPage";
 import Error from "../error/Error";
 import ErrorType from "../../util/errors/ErrorType";
 import Page from "../pages/page/Page";
 import {IRouterProps} from "./Routes";
 import PageContent from "../pages/page/content/PageContent";
-import KontaktPage from "../pages/kontakt/KontaktPage";
-import AboutPage from "../pages/about/AboutPage";
+import PartsPage from "../pages/page/parts_page/PartsPage";
+import MarkdownPage from "../md_page/MarkdownPage";
 
 const PagesRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
@@ -19,13 +18,20 @@ const PagesRouter = (props: IRouterProps) => {
         <AnimatePresence exitBeforeEnter={false}>
             <Switch location={location} key={location.pathname}>
                 <Route path={`${path}/about`}>
-                    <AboutPage {...props} />
+                    <PartsPage slug="about" {...props} theme={aboutTheme} />
+                </Route>
+                <Route path={`${path}/team`}>
+                    <PartsPage slug="team" {...props} theme={teamTheme} />
                 </Route>
                 <Route path={`${path}/kontakt`}>
-                    <KontaktPage {...props} />
+                    <PageContent theme={kontaktTheme} {...props}>
+                        <MarkdownPage slug="kontakt" />
+                    </PageContent>
                 </Route>
                 <Route path={`${path}/impressum`}>
-                    <ImpressumPage {...props} />
+                    <PageContent theme={impressumTheme} {...props}>
+                        <MarkdownPage slug="impressum" />
+                    </PageContent>
                 </Route>
                 <Route path={`${path}/*`}>
                     <PageContent theme={{...defaultTheme}} {...props}>

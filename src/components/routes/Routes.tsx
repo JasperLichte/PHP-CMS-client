@@ -7,6 +7,7 @@ import ErrorType from "../../util/errors/ErrorType";
 import AdminRouter from "./admin/AdminRouter";
 import User from "../../util/models/User";
 import PagesRouter from "./PagesRouter";
+import AdminPage from "../pages/admin/AdminPage";
 
 export interface IRouterProps {
     user: User|null,
@@ -18,7 +19,9 @@ export default function Routes(props: IRouterProps) {
             <AuthRouter {...props} />
         </Route>
         <Route path="/admin">
-            <AdminRouter {...props} />
+            <AdminPage>
+                <AdminRouter {...props} />
+            </AdminPage>
         </Route>
         <Route path="/-">
             <PagesRouter {...props} />
