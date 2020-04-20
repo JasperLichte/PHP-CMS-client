@@ -38,56 +38,73 @@ export const defaultTheme: Theme = {
     }
 };
 
-export const whatsImportantTheme = {...defaultTheme,};
-
 export const faqTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#FF7842', font: '#fff',},
-    footer: {...defaultTheme.footer, bg: '#FF7842', font: '#fff',},
+    nav: {...defaultTheme.nav, bg: '#e26d5c', font: '#fff',},
+    footer: {...defaultTheme.footer, bg: '#b3d7e2', font: '#222',},
     sections: {...defaultTheme.sections,
         colors: [
-            {bg: '#FF7842', font: '#fff'},
-            {bg: '#F6F9FA', font: '#222'},
-            {bg: '#AFACA9', font: '#222'},
-            {bg: '#5DA9E9', font: '#222'},
-            {bg: '#E5F4E3', font: '#222'},
+            {bg: '#b3d7e2', font: '#222'},
+            {bg: '#f5ff9e', font: '#222'},
+            {bg: '#b3d89c', font: '#222'},
+            {bg: '#e26d5c', font: '#fff'},
+            {bg: '#ffe1a8', font: '#222'},
         ],
     },
 };
 
-export const teamTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#F6F6F6', font: '#222',},
-    footer: {...defaultTheme.footer, bg: '#F6F6F6', font: '#222',},
+export const whatsImportantTheme = {...defaultTheme,
+    nav: {...defaultTheme.nav, bg: '#ffd300', font: '#222',},
+    footer: {...defaultTheme.footer, bg: '#ffd300', font: '#222',},
     sections: {...defaultTheme.sections,
         colors: [
-            {bg: '#F6F6F6', font: '#222'},
-            {bg: '#9CA6AB', font: '#222'},
-            {bg: '#FF5A09', font: '#fff'},
-            {bg: '#36454C', font: '#fff'},
-            {bg: '#D5DDE0', font: '#222'},
+            {bg: '#ffd300', font: '#222'},
+            {bg: '#45a91f', font: '#fff'},
+            {bg: '#19832d', font: '#fff'},
+            {bg: '#0eb98a', font: '#fff'},
+            {bg: '#52b3d1', font: '#fff'},
+            {bg: '#223b84', font: '#fff'},
+            {bg: '#c42b2b', font: '#fff'},
+            {bg: '#f34213', font: '#fff'},
+            {bg: '#f88b32', font: '#222'},
+            {bg: '#f5c012', font: '#222'},
         ],
     },
 };
 
 export const aboutTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#742C60', font: '#fff',},
-    footer: {...defaultTheme.footer, bg: '#742C60', font: '#fff',},
+    nav: {...defaultTheme.nav, bg: '#4d9de0', font: '#fff',},
+    footer: {...defaultTheme.footer, bg: '#4d9de0', font: '#fff',},
     sections: {...defaultTheme.sections,
         colors: [
-            {bg: '#742C60', font: '#fff'},
-            {bg: '#AF87A4', font: '#222'},
-            {bg: '#C7EAD1', font: '#222'},
-            {bg: '#030504', font: '#fff'},
-            {bg: '#2C7440', font: '#fff'},
+            {bg: '#4d9de0', font: '#fff'},
+            {bg: '#e15554', font: '#fff'},
+            {bg: '#e1bc29', font: '#222'},
+            {bg: '#3bb273', font: '#fff'},
+            {bg: '#7768ae', font: '#fff'},
+        ],
+    },
+};
+
+export const teamTheme = {...defaultTheme,
+    nav: {...defaultTheme.nav, bg: '#3d348b', font: '#fff',},
+    footer: {...defaultTheme.footer, bg: '#3d348b', font: '#fff',},
+    sections: {...defaultTheme.sections,
+        colors: [
+            {bg: '#3d348b', font: '#fff'},
+            {bg: '#7678ed', font: '#fff'},
+            {bg: '#f7b801', font: '#222'},
+            {bg: '#f18701', font: '#222'},
+            {bg: '#f35b04', font: '#fff'},
         ],
     },
 };
 
 export const impressumTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#5BC0EB', font: '#222',},
-    footer: {...defaultTheme.footer, bg: '#5BC0EB', font: '#222',},
+    nav: {...defaultTheme.nav, bg: '#fff', font: '#222',},
+    footer: {...defaultTheme.footer, bg: '#fff', font: '#222',},
 };
 
 export const kontaktTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#9BC53D', font: '#222',},
-    footer: {...defaultTheme.footer, bg: '#9BC53D', font: '#222',},
+    nav: {...defaultTheme.nav, bg: '#fff', font: '#222',},
+    footer: {...defaultTheme.footer, bg: '#fff', font: '#222',},
 };
