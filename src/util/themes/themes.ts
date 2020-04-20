@@ -100,11 +100,11 @@ export const teamTheme = {...defaultTheme,
 };
 
 export const impressumTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#fff', font: '#222',},
-    footer: {...defaultTheme.footer, bg: '#fff', font: '#222',},
+    nav: {...defaultTheme.nav, bg: '#dfd', font: '#222',},
+    footer: {...defaultTheme.footer, bg: '#dfd', font: '#222',},
 };
 
 export const kontaktTheme = {...defaultTheme,
-    nav: {...defaultTheme.nav, bg: '#fff', font: '#222',},
-    footer: {...defaultTheme.footer, bg: '#fff', font: '#222',},
+    nav: {...defaultTheme.nav, bg: '#dfd', font: '#222',},
+    footer: {...defaultTheme.footer, bg: '#dfd', font: '#222',},
 };

@@ -7,9 +7,9 @@
     height: 100%;
     overflow: hidden;
     animation: sky 2s ease forwards;
-    animation-delay: 4s;
+    animation-delay: 3s;
     @media screen and (max-width: 700px) {
-      animation-delay: 3s;
+      animation-delay: 2s;
     }
 
     background-image: radial-gradient(at top right, #458f94, #e2fdff, #e2fdff);
@@ -55,7 +55,7 @@
       transform-origin: 150px 150px;
       animation: moveIn, shine;
       animation-fill-mode: forwards, forwards;
-      animation-duration: 5s, 4s;
+      animation-duration: 4s, 4s;
       animation-delay: 0s, 7s;
       animation-direction: normal, alternate;
       animation-iteration-count: 1, infinite;
@@ -64,7 +64,7 @@
       @keyframes moveIn {
         0% {
           opacity: 0;
-          transform: translate(0, 0) scale(.5);
+          transform: translate(0, 0) scale(.3);
         }
         25% {
           opacity: .8;
@@ -84,7 +84,7 @@
        }
 
       @media screen and (max-width: 700px) {
-        animation-duration: 4s, 4s;
+        animation-duration: 3s, 4s;
         animation-delay: 0s, 6s;
         @keyframes moveIn {
           0% {
@@ -117,7 +117,7 @@
       transform: translate(100vw, 0);
 
       animation-name: moveInFL, cloudColorChange;
-      animation-duration: 3s;
+      animation-duration: 4s;
       animation-delay: 2s;
       animation-iteration-count: 1;
       animation-timing-function: ease;

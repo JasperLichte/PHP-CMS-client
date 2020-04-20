@@ -5,15 +5,47 @@
     position: fixed;
     top: 0;
     left: 1em;
-    font-family: 'Comic Neue', cursive;
-    font-size: 2.5rem;
-    font-weight: 100;
-    color: #222;
+
+    @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    color: #3f98bf;
+    text-transform: lowercase;
+
     width: 0;
     white-space: nowrap;
     overflow: hidden;
+    padding-bottom: 1em;
     animation: showHeader 4s ease forwards 1;
-    animation-delay: 7s;
+    animation-delay: 6s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 16px;
+      left: .525em;
+
+      background-color: #444;
+      height: .2em;
+      width: .2em;
+      border-radius: 50%;
+      border: .05em solid #3f98bf;
+      box-shadow: 0 0 0 .04em #fff,
+                  0 0 0 .09em #55C838;
+    }
+
+    span {
+      font-size: .3em;
+      position: absolute;
+      top: 3.8em;
+      left: 7.9em;
+      color: #444;
+      letter-spacing: .5ch;
+      text-transform: uppercase;
+      font-weight: 100;
+    }
 
     @keyframes showHeader {
       to {
@@ -24,8 +56,8 @@
     @media screen and (max-width: 600px) {
       transform: rotate(270deg);
       transform-origin: left;
-      top: 70vh;
-      left: 24px;
+      top: 50vh;
+      left: 72px;
 
       @keyframes showHeader {
         to {
@@ -34,16 +66,16 @@
       }
 
       @media screen and (max-height: 600px) {
-        font-size: 2rem;
+        font-size: 3rem;
       }
 
       @media screen and (max-height: 460px) {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
       }
 
       @media screen and (max-height: 340px) {
-        font-size: 1.2rem;
-        top: 90vh
+        font-size: 2rem;
+        top: 60vh
       }
     }
   }

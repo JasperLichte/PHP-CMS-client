@@ -20,7 +20,7 @@ export default function SvgScene({links}: IProps) {
                 key={l.target}
                 text={l.title}
                 onClick={() => history.push(l.target)}
-                pos={{x: calculateCloudXPos(), y: (i + 2) * 120 * scale}}
+                pos={{x: calculateCloudXPos(), y: (i + 2) * 140 * scale}}
                 scale={scale}
                 animationDelay={3000 + (600 * i)}
             />))}
@@ -30,7 +30,7 @@ export default function SvgScene({links}: IProps) {
 }
 
 function calculateCloudXPos(): number {
-    let min = (window.innerWidth <= 600 ? 80 : 40);
+    let min = (window.innerWidth <= 600 ? 120 : 40);
     let max = window.innerWidth - 160;
 
     if (window.innerWidth > 1080) {

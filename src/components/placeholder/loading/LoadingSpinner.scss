@@ -1,5 +1,5 @@
 .loading {
-  transition: opacity 2s ease;
+  transition: opacity 1s ease;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -18,7 +18,7 @@
   }
 
   &-fs {
-    background-color: var(--body-bg-color);
+    background-color: #fff;
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -34,7 +34,7 @@
     &[data-active=no] {
       left: 100vw;
       opacity: 0;
-      transition: opacity 2s ease, left 0s linear 2s;
+      transition: opacity 1s ease, left 0s linear 2s;
     }
   }
 

@@ -38,12 +38,12 @@ const PagesRouter = (props: IRouterProps) => {
                 </Route>
                 <Route path={`${path}/kontakt`}>
                     <PageContent theme={kontaktTheme} {...props}>
-                        <MarkdownPage slug="kontakt" />
+                        <MarkdownPage slug="kontakt" theme={kontaktTheme} />
                     </PageContent>
                 </Route>
                 <Route path={`${path}/impressum`}>
                     <PageContent theme={impressumTheme} {...props}>
-                        <MarkdownPage slug="impressum" />
+                        <MarkdownPage slug="impressum" theme={impressumTheme}  />
                     </PageContent>
                 </Route>
                 <Route path={`${path}/*`}>

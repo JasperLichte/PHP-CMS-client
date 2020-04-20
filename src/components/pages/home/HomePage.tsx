@@ -16,6 +16,6 @@ export default function HomePage() {
             {target: '/-/whats-important', title: 'Unser Motto'},
             {target: '/-/impressum', title: 'Impressum'},
         ]}/>
-        <h1>Kinderstube Sethweg e.V.</h1>
+        <h1>Kinderstube<span>Sethweg e.V.</span></h1>
     </div>);
 }
