@@ -9,7 +9,6 @@ export default function useMarkdownPageGroup(slug: string, allowMultiRequests: b
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        console.time();
         if (allowMultiRequests) {
             RequestFactory.getPageGroup(slug)
             .then(res => Promise.all(res.data.group.pages.map(slug => RequestFactory.getPage(slug))))
