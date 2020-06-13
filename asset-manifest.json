@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/jaspress-client/static/css/main.3a21991c.chunk.css",
-    "main.js": "/jaspress-client/static/js/main.7f0b032b.chunk.js",
-    "main.js.map": "/jaspress-client/static/js/main.7f0b032b.chunk.js.map",
+    "main.js": "/jaspress-client/static/js/main.280d122d.chunk.js",
+    "main.js.map": "/jaspress-client/static/js/main.280d122d.chunk.js.map",
     "runtime-main.js": "/jaspress-client/static/js/runtime-main.24af1705.js",
     "runtime-main.js.map": "/jaspress-client/static/js/runtime-main.24af1705.js.map",
     "static/js/2.2e9851f9.chunk.js": "/jaspress-client/static/js/2.2e9851f9.chunk.js",
     "static/js/2.2e9851f9.chunk.js.map": "/jaspress-client/static/js/2.2e9851f9.chunk.js.map",
     "index.html": "/jaspress-client/index.html",
-    "precache-manifest.0c9d4eb1c49b1d46a9e7457c1245109e.js": "/jaspress-client/precache-manifest.0c9d4eb1c49b1d46a9e7457c1245109e.js",
+    "precache-manifest.4acbf883c93df0dfaadffef14a1e1ae7.js": "/jaspress-client/precache-manifest.4acbf883c93df0dfaadffef14a1e1ae7.js",
     "service-worker.js": "/jaspress-client/service-worker.js",
     "static/css/main.3a21991c.chunk.css.map": "/jaspress-client/static/css/main.3a21991c.chunk.css.map",
     "static/js/2.2e9851f9.chunk.js.LICENSE.txt": "/jaspress-client/static/js/2.2e9851f9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.24af1705.js",
     "static/js/2.2e9851f9.chunk.js",
     "static/css/main.3a21991c.chunk.css",
-    "static/js/main.7f0b032b.chunk.js"
+    "static/js/main.280d122d.chunk.js"
   ]
 }
