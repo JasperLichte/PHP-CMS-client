@@ -4,10 +4,15 @@ import SetSettingsAction from "../actions/settings/SetSettingsAction";
 import SetErrorAction from "../actions/errors/SetErrorAction";
 import SetUserAction from "../actions/user/SetUserAction";
 import SetThemeAction from "../actions/themes/SetThemeAction";
+import SetAllowMultiRequestsAction from "../actions/settings/SetAllowMultiRequestsAction";
 
 const rootReducer = (
     state: State = new State(),
-    action: SetSettingsAction | SetErrorAction | SetUserAction | SetThemeAction
+    action: SetSettingsAction
+        | SetErrorAction
+        | SetUserAction
+        | SetThemeAction
+        | SetAllowMultiRequestsAction
 ): State => {
     switch(action.type) {
         case ActionType.SET_USER:
@@ -18,6 +23,8 @@ const rootReducer = (
             return {...state, error: action.error};
         case ActionType.SET_THEME:
             return {...state, theme: action.theme};
+        case ActionType.SET_ALLOW_MULTIREQUESTS:
+            return {...state, allowMultiRequests: action.allowMultiRequests};
     }
 
     return state;

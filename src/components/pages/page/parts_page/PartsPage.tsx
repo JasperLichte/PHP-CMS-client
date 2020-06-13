@@ -6,6 +6,8 @@ import MarkDownToJsx from "../../../md_page/MarkDownToJsx";
 import useMarkdownPageGroup from "../../../../hooks/useMarkdownPageGroup";
 import LoadingSpinner from "../../../placeholder/loading/LoadingSpinner";
 import './PartsPage.scss';
+import {useSelector} from "react-redux";
+import State from "../../../../util/models/State";
 
 interface IProps extends IRouterProps {
     slug: string,
@@ -13,7 +15,8 @@ interface IProps extends IRouterProps {
 }
 
 export default function PartsPage({slug, theme, ...props}: IProps) {
-    const {pages, isLoading} = useMarkdownPageGroup(slug);
+    const allowMultiRequests = useSelector((state: State) => state.allowMultiRequests);
+    const {pages, isLoading} = useMarkdownPageGroup(slug, allowMultiRequests);
 
     return (
         <PageContent theme={theme} {...props}>

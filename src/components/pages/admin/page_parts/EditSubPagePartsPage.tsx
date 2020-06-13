@@ -4,13 +4,16 @@ import useMarkdownPageGroup from "../../../../hooks/useMarkdownPageGroup";
 import LoadingSpinner from "../../../placeholder/loading/LoadingSpinner";
 import RequestFactory from "../../../../util/api/RequestFactory";
 import './EditSubPagePartsPage.scss';
+import {useSelector} from "react-redux";
+import State from "../../../../util/models/State";
 
 interface IProps {
     slug: string,
 }
 
 export default function EditSubPagePartsPage({slug}: IProps) {
-    const {pages, isLoading} = useMarkdownPageGroup(slug);
+    const allowMultiRequests = useSelector((state: State) => state.allowMultiRequests);
+    const {pages, isLoading} = useMarkdownPageGroup(slug, allowMultiRequests);
 
     return (<div className="about-admin-page">
         <LoadingSpinner color="#0a0" loading={isLoading} />

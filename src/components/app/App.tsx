@@ -74,6 +74,10 @@ function handlePreflightResponse(dispatch: Function) {
         type: ActionType.SET_USER,
         user: res.data.user
       });
+      dispatch({
+          type: ActionType.SET_ALLOW_MULTIREQUESTS,
+          allowMultiRequests: res.data.allowMultiRequests,
+      });
     } else {
       dispatch({
         type: ActionType.SET_ERROR,

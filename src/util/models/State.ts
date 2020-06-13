@@ -9,7 +9,7 @@ class State {
     settings: Setting[]|null = null;
     error: ErrorType|null = null;
     theme: Theme = defaultTheme;
-
+    allowMultiRequests: boolean = false;
 }
 
 export default State;
