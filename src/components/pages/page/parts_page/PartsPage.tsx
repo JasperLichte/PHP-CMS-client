@@ -23,7 +23,10 @@ export default function PartsPage({slug, ...props}: IProps) {
             <div className="parts-page">
                 <LoadingSpinner color={theme.nav.bg} loading={pagesAreLoading || themeIsLoading} fullScreen={true} />
                 {pages.map((p, i) => {
-                    const _theme = theme.sections.colors[i % theme.sections.colors.length];
+                    let _theme = theme.sections.colors[i % theme.sections.colors.length];
+                    if (!_theme) {
+                        _theme = {bg: '#ffffff', font: '#222222'};
+                    }
                     return (p != null && (
                         <section
                             key={p?.slug}

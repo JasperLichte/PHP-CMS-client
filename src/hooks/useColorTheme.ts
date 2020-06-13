@@ -11,8 +11,6 @@ export default function useColorTheme (slug: string): {theme: Theme, isLoading: 
             if (res.status === 200 && res.data.json) {
                 try {
                     const object = JSON.parse(res.data.json);
-                    console.log(object);
-
                     setTheme(object);
                 } catch(e) {}
             }
