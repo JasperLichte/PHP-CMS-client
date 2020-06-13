@@ -9,6 +9,7 @@ import GetStatisticsResponse from "./responses/admin/GetStatisticsResponse";
 import CreateMdPageRequestBody from "./requests/CreateMdPageRequestBody";
 import EditMdPageRequestBody from "./requests/EditMdPageRequestBody";
 import GetPageGroupResponse from "./responses/pages/GetPageGroupResponse";
+import GetJsonFromStoreResponse from "./responses/GetJsonFromStoreResponse";
 
 export default class RequestFactory {
 
@@ -93,6 +94,21 @@ export default class RequestFactory {
         return Api.makeGetRequest<GetStatisticsResponse>(
             new GetStatisticsResponse(),
             '/admin/statistics/get.php'
+        );
+    }
+
+    public static async getJsonFromStore(id: string) {
+        return Api.makeGetRequest<GetJsonFromStoreResponse>(
+            new GetJsonFromStoreResponse(),
+            `/store/get.php?id=${id}`
+        );
+    }
+
+    public static async saveJsonInStore(id: string, json: string) {
+        return Api.makePostRequest<NoDataResponse>(
+            new NoDataResponse(),
+            `/admin/store/save.php?id=${id}`,
+            {json}
         );
     }
 

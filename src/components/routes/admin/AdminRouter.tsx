@@ -7,6 +7,7 @@ import ErrorType from "../../../util/errors/ErrorType";
 import StatisticsPage from "../../pages/admin/statistics/StatisticsPage";
 import EditMarkdownPage from "../../md_page/edit/EditMarkdownPage";
 import AdminSubPagePartsRouter from "./AdminSubPagePartsRouter";
+import ColorsPage from "../../pages/admin/colors/ColorsPage";
 
 const AdminRouter = (props: IRouterProps) => {
     const {path, } = useRouteMatch();
@@ -37,6 +38,9 @@ const AdminRouter = (props: IRouterProps) => {
         </Route>
         <Route exact path={`${path}/impressum`}>
             <EditMarkdownPage slug="impressum" title="Impressum" onSave={(error => history.push('/-/impressum'))} />
+        </Route>
+        <Route exact path={`${path}/colors`}>
+            <ColorsPage />
         </Route>
         <Route exact path={`${path}/statistics`}>
             <StatisticsPage />

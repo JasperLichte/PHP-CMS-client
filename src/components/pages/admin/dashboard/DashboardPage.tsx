@@ -1,56 +1,45 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import './DashboardPage.scss';
-import {
-    aboutTheme,
-    defaultTheme, faqTheme,
-    impressumTheme,
-    kontaktTheme,
-    teamTheme,
-    whatsImportantTheme
-} from "../../../../util/themes/themes";
+import {defaultTheme} from "../../../../util/themes/themes";
 
 export default function DashboardPage() {
     const links = [
         {
             target: '/admin/team',
             title: 'Das Team',
-            theme: teamTheme,
         },
         {
             target: '/admin/about',
             title: 'Über uns',
-            theme: aboutTheme,
         },
         {
             target: '/admin/whats-important',
             title: 'Was uns wichtig ist',
-            theme: whatsImportantTheme,
         },
         {
             target: '/admin/faq',
             title: 'Häufig gestellte Fragen',
-            theme: faqTheme,
         },
         {
             target: '/admin/kontakt',
             title: 'Kontakt',
-            theme: kontaktTheme,
         },
         {
             target: '/admin/impressum',
             title: 'Impressum',
-            theme: impressumTheme,
+        },
+        {
+            target: '/admin/colors',
+            title: 'Farben',
         },
         {
             target: '/admin/statistics',
             title: 'Statistiken',
-            theme: {...defaultTheme, nav: {...defaultTheme.nav, bg: '#222', font: '#fff'}},
         },
         {
             target: '/auth/logout',
             title: 'Abmelden',
-            theme: {...defaultTheme, nav: {...defaultTheme.nav, bg: '#C3423F', font: '#fff'}},
         },
     ];
 
@@ -60,8 +49,8 @@ export default function DashboardPage() {
                 links.map(l => <Link to={l.target} key={l.target}>
                     <li
                         style={{
-                            backgroundColor: l.theme.nav.bg,
-                            color: l.theme.nav.font,
+                            backgroundColor: defaultTheme.nav.bg,
+                            color: defaultTheme.nav.font,
                         }}
                     >{l.title}</li>
                 </Link>)

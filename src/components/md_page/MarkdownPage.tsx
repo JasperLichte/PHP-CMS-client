@@ -3,14 +3,12 @@ import MarkDownToJsx from "./MarkDownToJsx";
 import LoadingSpinner from "../placeholder/loading/LoadingSpinner";
 import Error from "../error/Error";
 import useMarkdownPage from "../../hooks/useMarkdownPage";
-import {Theme} from "../../util/themes/themes";
 
 interface IProps {
     slug: string,
-    theme: Theme,
 }
 
-export default function MarkdownPage({slug, theme}: IProps) {
+export default function MarkdownPage({slug}: IProps) {
     const {page, loading, error} = useMarkdownPage(slug);
 
     useEffect(() => {
@@ -23,7 +21,7 @@ export default function MarkdownPage({slug, theme}: IProps) {
     <section>
         <LoadingSpinner
             loading={loading}
-            color={theme.nav.bg}
+            color={'#0a0'}
             delayMs={500}
             fullScreen={false}
         />

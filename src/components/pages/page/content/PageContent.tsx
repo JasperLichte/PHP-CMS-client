@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import { motion } from "framer-motion";
 import './PageContent.scss';
-import {Theme} from "../../../../util/themes/themes";
+import {defaultTheme, Theme} from "../../../../util/themes/themes";
 import {useDispatch} from "react-redux";
 import ActionType from "../../../../actions/ActionType";
 import {IRouterProps} from "../../../routes/Routes";
@@ -32,11 +32,14 @@ const pageTransition = {
 };
 
 interface IProps extends IRouterProps {
-    theme: Theme,
+    theme?: Theme,
 }
 
 const PageContent: React.FC<IProps> = ({children, theme, user}) => {
     const dispatch = useDispatch();
+    if (!theme) {
+        theme = defaultTheme;
+    }
 
     useEffect(() => {
         dispatch({

@@ -1,13 +1,5 @@
 import React from 'react'
 import {Route, Switch, useLocation, useRouteMatch} from 'react-router-dom';
-import {
-    aboutTheme,
-    defaultTheme, faqTheme,
-    impressumTheme,
-    kontaktTheme,
-    teamTheme,
-    whatsImportantTheme
-} from "../../util/themes/themes";
 import {AnimatePresence} from "framer-motion";
 import Error from "../error/Error";
 import ErrorType from "../../util/errors/ErrorType";
@@ -25,29 +17,29 @@ const PagesRouter = (props: IRouterProps) => {
         <AnimatePresence exitBeforeEnter={false}>
             <Switch location={location} key={location.pathname}>
                 <Route path={`${path}/about`}>
-                    <PartsPage slug="about" {...props} theme={aboutTheme} />
+                    <PartsPage slug="about" {...props} />
                 </Route>
                 <Route path={`${path}/team`}>
-                    <PartsPage slug="team" {...props} theme={teamTheme} />
+                    <PartsPage slug="team" {...props} />
                 </Route>
                 <Route path={`${path}/whats-important`}>
-                    <PartsPage slug="whats-important" {...props} theme={whatsImportantTheme} />
+                    <PartsPage slug="whats-important" {...props} />
                 </Route>
                 <Route path={`${path}/faq`}>
-                    <PartsPage slug="faq" {...props} theme={faqTheme} />
+                    <PartsPage slug="faq" {...props} />
                 </Route>
                 <Route path={`${path}/kontakt`}>
-                    <PageContent theme={kontaktTheme} {...props}>
-                        <MarkdownPage slug="kontakt" theme={kontaktTheme} />
+                    <PageContent {...props}>
+                        <MarkdownPage slug="kontakt"  />
                     </PageContent>
                 </Route>
                 <Route path={`${path}/impressum`}>
-                    <PageContent theme={impressumTheme} {...props}>
-                        <MarkdownPage slug="impressum" theme={impressumTheme}  />
+                    <PageContent {...props}>
+                        <MarkdownPage slug="impressum"  />
                     </PageContent>
                 </Route>
                 <Route path={`${path}/*`}>
-                    <PageContent theme={{...defaultTheme}} {...props}>
+                    <PageContent {...props}>
                         <Error errorType={ErrorType.NOT_FOUND} message="Seite nicht gefunden" />
                     </PageContent>
                 </Route>

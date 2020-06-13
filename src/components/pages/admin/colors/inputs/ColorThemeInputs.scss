@@ -1,0 +1,25 @@
+.color-theme-inputs {
+  padding: 1em;
+  margin: .5em;
+  border-bottom: 1px solid #222;
+
+  .row {
+    p {
+      display: inline-block;
+      width: 20ch;
+    }
+
+    button {
+      margin-left: .2em;
+    }
+
+    &.section p {
+      margin-right: -45px;
+    }
+  }
+  
+  > button {
+    margin-right: .5em;
+    padding: .5em 1em;
+  }
+}

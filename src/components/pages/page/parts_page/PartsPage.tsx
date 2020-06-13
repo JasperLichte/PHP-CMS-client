@@ -1,6 +1,5 @@
 import React from "react";
 import PageContent from "../../page/content/PageContent";
-import {Theme} from "../../../../util/themes/themes";
 import {IRouterProps} from "../../../routes/Routes";
 import MarkDownToJsx from "../../../md_page/MarkDownToJsx";
 import useMarkdownPageGroup from "../../../../hooks/useMarkdownPageGroup";
@@ -8,20 +7,21 @@ import LoadingSpinner from "../../../placeholder/loading/LoadingSpinner";
 import './PartsPage.scss';
 import {useSelector} from "react-redux";
 import State from "../../../../util/models/State";
+import useColorTheme from "../../../../hooks/useColorTheme";
 
 interface IProps extends IRouterProps {
     slug: string,
-    theme: Theme,
 }
 
-export default function PartsPage({slug, theme, ...props}: IProps) {
+export default function PartsPage({slug, ...props}: IProps) {
     const allowMultiRequests = useSelector((state: State) => state.allowMultiRequests);
-    const {pages, isLoading} = useMarkdownPageGroup(slug, allowMultiRequests);
+    const {pages, isLoading: pagesAreLoading} = useMarkdownPageGroup(slug, allowMultiRequests);
+    const {theme, isLoading: themeIsLoading} = useColorTheme(slug);
 
     return (
         <PageContent theme={theme} {...props}>
             <div className="parts-page">
-                <LoadingSpinner color={theme.nav.bg} loading={isLoading} fullScreen={true} />
+                <LoadingSpinner color={theme.nav.bg} loading={pagesAreLoading || themeIsLoading} fullScreen={true} />
                 {pages.map((p, i) => {
                     const _theme = theme.sections.colors[i % theme.sections.colors.length];
                     return (p != null && (
