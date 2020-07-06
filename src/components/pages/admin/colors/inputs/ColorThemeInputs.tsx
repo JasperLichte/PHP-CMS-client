@@ -3,6 +3,7 @@ import LoadingSpinner from "../../../../placeholder/loading/LoadingSpinner";
 import useColorTheme from "../../../../../hooks/useColorTheme";
 import "./ColorThemeInputs.scss";
 import RequestFactory from "../../../../../util/api/RequestFactory";
+import {defaultTheme} from "../../../../../util/themes/themes";
 
 interface IProps {
     slug: string,
@@ -29,6 +30,9 @@ export default function ColorThemeInputs({slug, title}: IProps) {
                 value={theme.nav.bg}
                 onChange={e => setTheme({...theme, nav: {...theme.nav, bg: e.target.value}})}
             />
+            <button
+                onClick={e => setTheme({...theme, nav: {...theme.nav, bg: defaultTheme.nav.bg}})}
+            >Zurücksetzen</button>
         </div>
         <div className="row">
             <p>Navigation Schrift</p>
@@ -37,6 +41,9 @@ export default function ColorThemeInputs({slug, title}: IProps) {
                 value={theme.nav.font}
                 onChange={e => setTheme({...theme, nav: {...theme.nav, font: e.target.value}})}
             />
+            <button
+                onClick={e => setTheme({...theme, nav: {...theme.nav, font: defaultTheme.nav.font}})}
+            >Zurücksetzen</button>
         </div>
         <div className="row">
             <p>Footer Hintergrund</p>
@@ -45,6 +52,9 @@ export default function ColorThemeInputs({slug, title}: IProps) {
                 value={theme.footer.bg}
                 onChange={e => setTheme({...theme, footer: {...theme.footer, bg: e.target.value}})}
             />
+            <button
+                onClick={e => setTheme({...theme, footer: {...theme.footer, bg: defaultTheme.footer.bg}})}
+            >Zurücksetzen</button>
         </div>
         <div className="row">
             <p>Footer Schrift</p>
@@ -53,6 +63,9 @@ export default function ColorThemeInputs({slug, title}: IProps) {
                 value={theme.footer.font}
                 onChange={e => setTheme({...theme, footer: {...theme.footer, font: e.target.value}})}
             />
+            <button
+                onClick={e => setTheme({...theme, footer: {...theme.footer, font: defaultTheme.footer.font}})}
+            >Zurücksetzen</button>
         </div>
         {sections.map((s, i) => <div className="row section" key={`section-row-${i}`}>
             <p>Abschnitt {i + 1}</p>

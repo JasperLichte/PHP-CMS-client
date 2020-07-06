@@ -8,7 +8,5 @@ export default function ColorsPage() {
         <ColorThemeInputs slug="team" title="Das Team" />
         <ColorThemeInputs slug="whats-important" title="Was uns wichtig ist" />
         <ColorThemeInputs slug="faq" title="Häufig gestellte Fragen" />
-        <ColorThemeInputs slug="kontakt" title="Kontakt" />
-        <ColorThemeInputs slug="impressum" title="Impressum" />
     </>);
 }
