@@ -124,12 +124,6 @@
       animation-direction: normal;
       animation-fill-mode: forwards;
 
-      &:nth-of-type(odd) {
-        animation-direction: normal, reverse;
-        animation-name: moveInFR;
-        transform: translate(-100vw, 0);
-      }
-
       @keyframes moveInFR {
         from {
           transform: translate(100vw, 0);
