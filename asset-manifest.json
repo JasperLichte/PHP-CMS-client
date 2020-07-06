@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/jaspress-client/static/css/main.aa1cb1dd.chunk.css",
-    "main.js": "/jaspress-client/static/js/main.c82ac4c5.chunk.js",
-    "main.js.map": "/jaspress-client/static/js/main.c82ac4c5.chunk.js.map",
+    "main.js": "/jaspress-client/static/js/main.9ee8ab10.chunk.js",
+    "main.js.map": "/jaspress-client/static/js/main.9ee8ab10.chunk.js.map",
     "runtime-main.js": "/jaspress-client/static/js/runtime-main.24af1705.js",
     "runtime-main.js.map": "/jaspress-client/static/js/runtime-main.24af1705.js.map",
-    "static/js/2.2e9851f9.chunk.js": "/jaspress-client/static/js/2.2e9851f9.chunk.js",
-    "static/js/2.2e9851f9.chunk.js.map": "/jaspress-client/static/js/2.2e9851f9.chunk.js.map",
+    "static/js/2.29473c2e.chunk.js": "/jaspress-client/static/js/2.29473c2e.chunk.js",
+    "static/js/2.29473c2e.chunk.js.map": "/jaspress-client/static/js/2.29473c2e.chunk.js.map",
     "index.html": "/jaspress-client/index.html",
-    "precache-manifest.9d82e84a71f4bc4520b29a728c70d626.js": "/jaspress-client/precache-manifest.9d82e84a71f4bc4520b29a728c70d626.js",
+    "precache-manifest.1cab7403f794b1db302b49d30f4f8599.js": "/jaspress-client/precache-manifest.1cab7403f794b1db302b49d30f4f8599.js",
     "service-worker.js": "/jaspress-client/service-worker.js",
     "static/css/main.aa1cb1dd.chunk.css.map": "/jaspress-client/static/css/main.aa1cb1dd.chunk.css.map",
-    "static/js/2.2e9851f9.chunk.js.LICENSE.txt": "/jaspress-client/static/js/2.2e9851f9.chunk.js.LICENSE.txt"
+    "static/js/2.29473c2e.chunk.js.LICENSE.txt": "/jaspress-client/static/js/2.29473c2e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.24af1705.js",
-    "static/js/2.2e9851f9.chunk.js",
+    "static/js/2.29473c2e.chunk.js",
     "static/css/main.aa1cb1dd.chunk.css",
-    "static/js/main.c82ac4c5.chunk.js"
+    "static/js/main.9ee8ab10.chunk.js"
   ]
 }
