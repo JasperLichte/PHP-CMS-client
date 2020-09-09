@@ -4,9 +4,10 @@ import ColorThemeInputs from "./inputs/ColorThemeInputs";
 export default function ColorsPage() {
 
     return (<>
+        <ColorThemeInputs slug="team" title="Team" />
+        <ColorThemeInputs slug="raeume" title="Räume" />
         <ColorThemeInputs slug="about" title="Über uns" />
-        <ColorThemeInputs slug="team" title="Das Team" />
-        <ColorThemeInputs slug="whats-important" title="Was uns wichtig ist" />
-        <ColorThemeInputs slug="faq" title="Häufig gestellte Fragen" />
+        <ColorThemeInputs slug="partner" title="Partner" />
+        <ColorThemeInputs slug="angebote" title="Angebote" />
     </>);
 }

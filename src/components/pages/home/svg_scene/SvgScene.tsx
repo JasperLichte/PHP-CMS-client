@@ -20,7 +20,7 @@ export default function SvgScene({links}: IProps) {
                 key={l.target}
                 text={l.title}
                 onClick={() => history.push(l.target)}
-                pos={{x: calculateCloudXPos(), y: (i + 2) * 140 * scale}}
+                pos={{x: calculateCloudXPos(), y: calculateCloudYPos(i)}}
                 scale={scale}
                 animationDelay={3000 + (600 * i)}
             />))}
@@ -39,6 +39,13 @@ function calculateCloudXPos(): number {
     }
 
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function calculateCloudYPos(i: number): number {
+    if (window.innerWidth > 600) {
+        return (i + 2) * (window.innerHeight > 900 ? 120 : 82);
+    }
+    return (i + 1) * 94 - 30;
 }
 
 function calculateScaleByWindowSize(): number {

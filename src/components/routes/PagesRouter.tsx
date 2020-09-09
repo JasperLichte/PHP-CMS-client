@@ -16,22 +16,25 @@ const PagesRouter = (props: IRouterProps) => {
     return (<Page {...props}>
         <AnimatePresence exitBeforeEnter={false}>
             <Switch location={location} key={location.pathname}>
-                <Route path={`${path}/about`}>
-                    <PartsPage slug="about" {...props} />
-                </Route>
                 <Route path={`${path}/team`}>
                     <PartsPage slug="team" {...props} />
                 </Route>
-                <Route path={`${path}/whats-important`}>
-                    <PartsPage slug="whats-important" {...props} />
+                <Route path={`${path}/raeume`}>
+                    <PartsPage slug="raeume" {...props} />
                 </Route>
-                <Route path={`${path}/faq`}>
-                    <PartsPage slug="faq" {...props} />
+                <Route path={`${path}/about`}>
+                    <PartsPage slug="about" {...props} />
                 </Route>
                 <Route path={`${path}/kontakt`}>
                     <PageContent {...props}>
                         <MarkdownPage slug="kontakt"  />
                     </PageContent>
+                </Route>
+                <Route path={`${path}/partner`}>
+                    <PartsPage slug="partner" {...props} />
+                </Route>
+                <Route path={`${path}/angebote`}>
+                    <PartsPage slug="angebote" {...props} />
                 </Route>
                 <Route path={`${path}/impressum`}>
                     <PageContent {...props}>

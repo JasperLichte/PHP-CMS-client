@@ -3,16 +3,18 @@
 
   h1 {
     position: fixed;
-    top: 0;
-    left: 1em;
+    top: -.3em;
+    left: 1rem;
 
     @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
     font-family: 'Oswald', sans-serif;
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: 900;
     letter-spacing: .05em;
-    color: #3f98bf;
+    color: #11a9d1;
     text-transform: lowercase;
+    text-shadow: 3px 0 0 #11a9d1;
+    transform: scale(1, .6);
 
     width: 0;
     white-space: nowrap;
@@ -21,30 +23,40 @@
     animation: showHeader 4s ease forwards 1;
     animation-delay: 6s;
 
+    background-image: url(https://www.media.lichte.info/spatz.png);
+    background-position-x: 105px;
+    background-position-y: -210px;
+    background-size: 170px 550px;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+    margin-top: -20px;
+
     &::before {
       content: '';
       position: absolute;
-      top: 16px;
-      left: .525em;
+      top: calc(.248em + 50px);
+      left: .54em;
+      transform: scale(1, 1.6);
 
       background-color: #444;
-      height: .2em;
-      width: .2em;
+      height: .14em;
+      width: .14em;
       border-radius: 50%;
-      border: .05em solid #3f98bf;
+      border: .05em solid #11a9d1;
       box-shadow: 0 0 0 .04em #fff,
                   0 0 0 .09em #55C838;
     }
 
     span {
-      font-size: .3em;
+      font-size: .24em;
       position: absolute;
-      top: 3.8em;
-      left: 7.9em;
+      top: calc(5.25em + 50px);
+      left: 10.7em;
       color: #444;
-      letter-spacing: .5ch;
+      letter-spacing: .7ch;
       text-transform: uppercase;
-      font-weight: 100;
+      font-weight: 400;
+      text-shadow: 1px 0 transparent;
     }
 
     @keyframes showHeader {
@@ -54,10 +66,10 @@
     }
 
     @media screen and (max-width: 600px) {
-      transform: rotate(270deg);
+      transform: scale(.7, 1) rotate(270deg);
       transform-origin: left;
       top: 50vh;
-      left: 72px;
+      left: 62px;
 
       @keyframes showHeader {
         to {

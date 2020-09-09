@@ -26,11 +26,12 @@ const Nav: React.FC<IProps> = ({theme}) => {
             <button className="close-btn" onClick={() => setIsOpen(!isOpen)}>
             </button>
             {[
+                {target: '/-/team', title: 'Team'},
+                {target: '/-/raeume', title: 'Räume'},
                 {target: '/-/about', title: 'Über uns'},
-                {target: '/-/team', title: 'Das Team'},
-                {target: '/-/whats-important', title: 'Was uns wichtig ist'},
-                {target: '/-/faq', title: 'Häufig gestellte Fragen'},
                 {target: '/-/kontakt', title: 'Kontakt'},
+                {target: '/-/partner', title: 'Partner'},
+                {target: '/-/angebote', title: 'Angebote'},
                 {target: '/-/impressum', title: 'Impressum'},
             ].map(l => <li key={l.target}>
                 <NavLink

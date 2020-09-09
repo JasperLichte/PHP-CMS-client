@@ -5,42 +5,16 @@ import {defaultTheme} from "../../../../util/themes/themes";
 
 export default function DashboardPage() {
     const links = [
-        {
-            target: '/admin/team',
-            title: 'Das Team',
-        },
-        {
-            target: '/admin/about',
-            title: 'Über uns',
-        },
-        {
-            target: '/admin/whats-important',
-            title: 'Was uns wichtig ist',
-        },
-        {
-            target: '/admin/faq',
-            title: 'Häufig gestellte Fragen',
-        },
-        {
-            target: '/admin/kontakt',
-            title: 'Kontakt',
-        },
-        {
-            target: '/admin/impressum',
-            title: 'Impressum',
-        },
-        {
-            target: '/admin/colors',
-            title: 'Farben',
-        },
-        {
-            target: '/admin/statistics',
-            title: 'Statistiken',
-        },
-        {
-            target: '/auth/logout',
-            title: 'Abmelden',
-        },
+        {target: '/admin/team', title: 'Team'},
+        {target: '/admin/raeume', title: 'Räume'},
+        {target: '/admin/about', title: 'Über uns'},
+        {target: '/admin/kontakt', title: 'Kontakt'},
+        {target: '/admin/partner', title: 'Partner'},
+        {target: '/admin/angebote', title: 'Angebote'},
+        {target: '/admin/impressum', title: 'Impressum'},
+        {target: '/admin/colors', title: 'Farben'},
+        {target: '/admin/statistics', title: 'Statistiken'},
+        {target: '/auth/logout', title: 'Abmelden'},
     ];
 
     return (<div className="dashboard-page">

@@ -21,20 +21,23 @@ const AdminRouter = (props: IRouterProps) => {
         <Route exact path={`${path}/`}>
             <DashboardPage />
         </Route>
-        <Route path={`${path}/about`}>
-            <AdminSubPagePartsRouter slug="about" {...props} />
-        </Route>
         <Route path={`${path}/team`}>
             <AdminSubPagePartsRouter slug="team" {...props} />
         </Route>
-        <Route path={`${path}/whats-important`}>
-            <AdminSubPagePartsRouter slug="whats-important" {...props} />
+        <Route path={`${path}/raeume`}>
+            <AdminSubPagePartsRouter slug="raeume" {...props} />
         </Route>
-        <Route path={`${path}/faq`}>
-            <AdminSubPagePartsRouter slug="faq" {...props} />
+        <Route path={`${path}/about`}>
+            <AdminSubPagePartsRouter slug="about" {...props} />
         </Route>
         <Route exact path={`${path}/kontakt`}>
             <EditMarkdownPage slug="kontakt" title="Kontakt" onSave={(error => history.push('/-/kontakt'))} />
+        </Route>
+        <Route path={`${path}/partner`}>
+            <AdminSubPagePartsRouter slug="partner" {...props} />
+        </Route>
+        <Route path={`${path}/angebote`}>
+            <AdminSubPagePartsRouter slug="angebote" {...props} />
         </Route>
         <Route exact path={`${path}/impressum`}>
             <EditMarkdownPage slug="impressum" title="Impressum" onSave={(error => history.push('/-/impressum'))} />
